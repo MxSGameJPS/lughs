@@ -24,7 +24,7 @@ export const HeroSection = () => {
 
       <div className={styles.imgBox}>
         {/* Parallax background sits behind the personagens image */}
-        <ParallaxBackground layers={[camada]} />
+        <ParallaxBackground layers={[camada]}  />
 
         <img className={styles.imgLogo} src={logo} alt="logo" />
         <img

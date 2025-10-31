@@ -1,11 +1,36 @@
 .parallax {
   position: absolute;
-  top: -20%;
-  left: 20%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  overflow: visible;
   background-repeat: no-repeat;
   background-position: 50% 50%;
   pointer-events: none; /* don't block interactions */
   z-index: 0; /* sit behind images with higher z-index */
+}
+
+/* Image-based parallax (single image) */
+.parallaxImg {
+  position: absolute;
+  left: 68%;
+  top: 20%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  max-width: 520px;
+  height: auto;
+  object-fit: contain;
+  will-change: transform;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@media (max-width: 800px) {
+  .parallaxImg {
+    width: 60%;
+    top: 45%;
+  }
 }
