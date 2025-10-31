@@ -42,7 +42,7 @@ export const FooterDesk = () => {
       <div className={styles.lower}>
         <div className={styles.lowerContentBox}>
           <div className={styles.lowerContent}>
-            <img src={logoAzul} alt="logoAzul" />
+            <img className={styles.logoAzul} src={logoAzul} alt="logoAzul" />
 
             <button className={styles.wishBtn}>
               <img src={iconBtn} alt="" />
