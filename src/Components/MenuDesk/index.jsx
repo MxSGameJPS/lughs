@@ -3,6 +3,7 @@ import logo from "../../Assets/logo.png";
 import iconBtn from "../../Assets/icon_btn.png";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import styles from "./menuDesk.module.css";
+import LanguageSwitcher from "../LanguageSwitcher";
 
 export const MenuDesk = () => {
   const { t } = useTranslation();
@@ -15,48 +16,54 @@ export const MenuDesk = () => {
   };
 
   return (
-    <div className={styles.wrapper}>
-      <img src={logo} alt={t("menu.alt")} />
+    <>
+      <div className={styles.wrapper}>
+        <img src={logo} alt={t("menu.alt")} />
 
-      <div className={styles.menuBox}>
-        <button onClick={() => scrollToSection("home")}>
-          {t("menu.home")}
-        </button>
+        <div className={styles.menuBox}>
+          <button onClick={() => scrollToSection("home")}>
+            {t("menu.home")}
+          </button>
 
-        <div className={styles.menuBar} />
+          <div className={styles.menuBar} />
 
-        <button onClick={() => scrollToSection("about")}>
-          {t("menu.about")}
-        </button>
+          <button onClick={() => scrollToSection("about")}>
+            {t("menu.about")}
+          </button>
 
-        <div className={styles.menuBar} />
+          <div className={styles.menuBar} />
 
-        <button onClick={() => scrollToSection("lughs")}>
-          {t("menu.lughs")}
-        </button>
+          <button onClick={() => scrollToSection("lughs")}>
+            {t("menu.lughs")}
+          </button>
 
-        <div className={styles.menuBar} />
+          <div className={styles.menuBar} />
 
-        <button onClick={() => scrollToSection("gallery")}>
-          {t("menu.gallery")}
-        </button>
+          <button onClick={() => scrollToSection("gallery")}>
+            {t("menu.gallery")}
+          </button>
 
-        <div className={styles.menuBar} />
+          <div className={styles.menuBar} />
 
-        <button onClick={() => scrollToSection("video")}>
-          {t("menu.video")}
-        </button>
+          <button onClick={() => scrollToSection("video")}>
+            {t("menu.video")}
+          </button>
 
-        <div className={styles.menuBar} />
+          <div className={styles.menuBar} />
 
-        <button onClick={() => scrollToSection("faq")}>{t("menu.faq")}</button>
+          <button onClick={() => scrollToSection("faq")}>
+            {t("menu.faq")}
+          </button>
+        </div>
       </div>
-
-      <button className={styles.wishBtn}>
+      <button className={styles.wishBtn} title={t("buttons.wishlist")}>
         <img src={iconBtn} alt="" />
         {t("buttons.wishlist")}
         <MdOutlineKeyboardArrowRight />
       </button>
-    </div>
+      <div>
+        <LanguageSwitcher />
+      </div>
+    </>
   );
 };

@@ -1,0 +1,11 @@
+.parallax {
+  position: absolute;
+  top: -20%;
+  left: 20%;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  pointer-events: none; /* don't block interactions */
+  z-index: 0; /* sit behind images with higher z-index */
+}

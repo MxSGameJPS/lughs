@@ -1,13 +1,23 @@
 .iconButton {
-  border: 2px solid var(--branco);
-  padding: 5px;
-  height: fit-content;
+  /* Make the IconButton an inline-flex box and ensure border is visible
+     when used with MUI's IconButton + Avatar inside. */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border: 2px solid var(--branco) !important;
+  padding: 6px !important;
+  min-width: auto;
   background: transparent;
+  border-radius: 50%;
+  overflow: visible;
+  /* add a subtle ring so the border is visible against bright flags */
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0), 0 0 0 4px rgba(0, 0, 0, 0.08);
 }
 
 .avatar {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
 }
 
 .avatarSmall {

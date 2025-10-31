@@ -2,7 +2,9 @@ import { MenuDesk } from "../MenuDesk";
 import { MenuMobile } from "../MenuMobile";
 import logo from "../../Assets/logo_hero.png";
 import personagens from "../../Assets/personagens_hero.png";
-import LanguageSwitcher from "../LanguageSwitcher";
+import { ParallaxBackground } from "../ParallaxBackground";
+import camada from "../../Assets/crystal-isolado.png";
+// import LanguageSwitcher from "../LanguageSwitcher";
 import { useTranslation } from "react-i18next";
 import iconBtn from "../../Assets/icon_btn.png";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
@@ -17,10 +19,13 @@ export const HeroSection = () => {
       <MenuMobile />
       <div className={styles.menuDeskBox}>
         <MenuDesk />
-        <LanguageSwitcher />
+        {/* <LanguageSwitcher /> */}
       </div>
 
       <div className={styles.imgBox}>
+        {/* Parallax background sits behind the personagens image */}
+        <ParallaxBackground layers={[camada]} />
+
         <img className={styles.imgLogo} src={logo} alt="logo" />
         <img
           className={styles.imgPersonagens}

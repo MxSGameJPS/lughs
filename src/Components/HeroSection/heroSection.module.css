@@ -1,7 +1,6 @@
 .wrapper {
-  height: fit-content;
   background-image: url("../../Assets/Background_hero.png");
-  background-position: center;
+  background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -9,7 +8,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
-
+  width: 100%;
   padding: 28px 0;
   padding-top: 108px;
   gap: 28px;
@@ -82,6 +81,11 @@
   justify-content: center;
 }
 
+/* make imgBox a positioned container so absolute parallax fits */
+.imgBox {
+  position: relative;
+}
+
 @media (min-width: 1200px) {
   .imgBox {
     width: 80%;
@@ -97,6 +101,10 @@
   will-change: transform, opacity;
   display: none;
   animation: slideUpIn 700ms ease-out 160ms both;
+}
+
+.imgLogo {
+  z-index: 2;
 }
 
 .imgLogo:hover {
@@ -131,6 +139,11 @@
   animation: slideDownIn 700ms ease-out 80ms both;
 }
 
+.imgPersonagens {
+  position: relative;
+  z-index: 3; /* sit above the parallax background */
+}
+
 .imgPersonagens:hover {
   animation: slideDownAgain 700ms ease-out both;
 }
@@ -156,6 +169,7 @@
 }
 
 .wishBtnBox {
+  /* layout controlled only by media queries */
 }
 
 @media (min-width: 1200px) {
