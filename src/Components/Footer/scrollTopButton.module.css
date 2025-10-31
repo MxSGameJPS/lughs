@@ -1,9 +1,9 @@
 .scrollTop {
   position: fixed;
-  right: 20px;
-  bottom: 20px;
-  width: 48px;
-  height: 48px;
+  right: 10%;
+  bottom: 20%;
+  width: 68px;
+  height: 68px;
   border-radius: 50%;
   background: #1ea7e1; /* azul padrão, pode ajustar */
   color: white;

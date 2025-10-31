@@ -25,7 +25,7 @@ export const ScrollTopButton = ({ threshold = 200 }) => {
       aria-label="Voltar ao topo"
       title="Voltar ao topo"
     >
-      <MdOutlineKeyboardArrowUp size={24} />
+      <MdOutlineKeyboardArrowUp size={64} />
     </button>
   );
 };
