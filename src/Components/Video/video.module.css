@@ -1,0 +1,125 @@
+/* convertido de styles.js */
+.wrapper {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: var(--azul-branding);
+  padding: 40px 0;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    padding: 48px 56px;
+  }
+}
+@media (min-width: 1200px) {
+  .wrapper {
+    padding: 48px 120px;
+  }
+}
+
+.carousel {
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+}
+
+:global(.swiper) {
+  padding-bottom: 60px;
+}
+
+:global(.swiper-pagination-bullet) {
+  background: rgba(255, 255, 255, 0.7);
+  opacity: 1;
+}
+:global(.swiper-pagination-bullet-active) {
+  background: #ffa200;
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  transform: translateY(-100%);
+  width: 44px;
+  height: 44px;
+  border: none;
+  cursor: pointer;
+  color: var(--branco);
+  display: none;
+}
+
+.navButton.swiper-button-prev::before,
+.navButton.swiper-button-next::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+.navButton.swiper-button-prev {
+  left: -55px;
+}
+.navButton.swiper-button-next {
+  right: -55px;
+}
+
+@media (min-width: 1000px) {
+  .navButton {
+    display: block;
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+  border-top: 4px solid #7d55ff;
+}
+
+.videoFrame {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+.caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0px 12px;
+  color: #273240;
+  height: 60px;
+}
+
+.caption span {
+  color: var(--bg-navy);
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.ytBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  color: #282828;
+  font-size: 16px;
+}
+
+.ytBadge svg {
+  color: #282828;
+}

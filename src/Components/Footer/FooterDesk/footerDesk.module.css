@@ -1,0 +1,197 @@
+.wrapper {
+  height: 1062px;
+  position: relative;
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  .wrapper {
+    display: block;
+  }
+}
+
+.upper {
+  background-image: url("../../../Assets/bg_footer_1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  position: relative;
+  height: 651px;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.upper img {
+  margin-right: -100px;
+  margin-top: 50px;
+  width: 610px;
+}
+
+.cardDiscordText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  color: var(--branco);
+  margin-top: -150px;
+  width: fit-content;
+}
+
+.cardDiscordText h1 {
+  color: #fff;
+  text-align: center;
+  font-family: Gokhan;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2px;
+}
+
+.cardDiscordText p {
+  color: #fff;
+  text-align: center;
+  font-family: Sora;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.cardDiscordText button {
+  display: flex;
+  width: 356px;
+  height: 72px;
+  padding: 40px;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  border-radius: 20px;
+  border: 2px solid #fff;
+  color: #fff;
+  text-align: right;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.lower {
+  background-image: url("../../../Assets/bg_footer_2.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  position: relative;
+  height: 703px;
+  z-index: 10;
+  margin-top: -275px;
+  padding: 40px 0;
+}
+
+@media (min-width: 768px) {
+  .lower {
+    padding: 48px 56px;
+  }
+}
+
+.lowerContentBox {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 68px;
+  padding-top: 136px;
+}
+
+.lowerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--bg-navy);
+  width: 100%;
+}
+
+.title {
+  font-family: Gokhan;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1px;
+}
+
+.socialRow {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.iconButton {
+}
+
+.wishBtn {
+  display: flex;
+  width: 300px;
+  height: 72px;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border-radius: 20px;
+  border: 2px solid var(--Navy---Branding-Color, #013b51);
+  color: var(--Navy---Branding-Color, #013b51);
+  text-align: right;
+  font-family: Sora;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.companyInfo {
+  color: var(--Navy---Branding-Color, #013b51);
+  font-family: Sora;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: left;
+}
+
+.contactButton {
+  display: flex;
+  padding: 8px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 10px;
+  border: 2px solid var(--bg-navy);
+  color: var(--bg-navy);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.copyBar {
+  color: var(--bg-navy);
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.logosRow {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 42px;
+}
+
+.logoBox {
+  border-radius: 10px;
+}

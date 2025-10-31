@@ -1,0 +1,50 @@
+/* convertido de styles.js */
+.wishBtn {
+  display: flex;
+  height: 32px;
+  padding: 0 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+  color: var(--branco);
+  background-color: var(--azul-branding);
+  border: 2px solid var(--branco);
+  background-clip: padding-box;
+}
+
+.wishBtn:hover {
+  background-color: var(--laranja);
+}
+
+@media (min-width: 1260px) {
+  .wishBtn {
+    width: 300px;
+    height: 72px;
+    padding: 40px;
+    gap: 14px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    text-align: right;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0 34px;
+  }
+
+  .wishBtn img {
+    display: block;
+    margin: 0 !important;
+  }
+  .wishBtn svg {
+    display: none;
+  }
+}
+
+.wishBtn img {
+  display: none;
+  margin: 0 !important;
+}
+.wishBtn svg {
+  display: block;
+}

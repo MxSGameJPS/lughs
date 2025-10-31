@@ -1,0 +1,98 @@
+{
+  "buttons": {
+    "wishlist": "Agregar a la lista de deseos",
+    "discord": "Entrar en Discord",
+    "follow": "síguenos",
+    "prismatic": "Prismático",
+    "regular": "Regular"
+  },
+  "menu": {
+    "home": "Inicio",
+    "about": "Sobre",
+    "lughs": "Lughs",
+    "gallery": "Galería",
+    "video": "Vídeo",
+    "faq": "FAQ",
+    "alt": "Logo"
+  },
+  "about": {
+    "title": "¡Tu viaje comienza ahora!",
+    "subtitle": "Lugh World es un MMORPG acogedor donde puedes ser quien quieras. ¡Explora, captura criaturas, haz amigos y vive una gran y mágica aventura!"
+  },
+  "lughs": {
+    "anky": {
+      "text": "La margarita en su frente se utiliza para absorber la energía solar, lo que les permite moverse más rápido. Los Ankyloseeds también aprenden a liberar la energía almacenada en forma de ataque, alcanzando distancias considerables. Al nacer, permanecen cerca del nido hasta evolucionar.",
+      "subText": "Curiosidad: Ten mucho cuidado porque los padres de Ankylosseeds son extremadamente territoriales y nunca dejan el nido desprotegido."
+    },
+    "araupi": {
+      "text": "Los Araupis son Lughs extremadamente llamativos por sus colores. A pesar de su pequeño tamaño, tienen un pico fuerte capaz de cortar troncos de árboles y partir rocas.",
+      "subText": "En esta etapa de la vida están aprendiendo a volar, por lo que pasan la mayor parte del tiempo en el suelo, pero siempre que pueden baten las alas para alcanzar ramas más altas, lo que los hace Lughs adorables pero torpes."
+    }
+  },
+  "gallery": {
+    "title": "¡UN MUNDO POR EXPLORAR!",
+    "carousel": {
+      "carousel1": {
+        "title": "¡Tu mejor amigo!",
+        "text": "¡Siempre que tu Lugh esté fuera del cristal, te acompañará!"
+      },
+      "carousel2": {
+        "title": "Natación",
+        "text": "¡Nada por las playas de Lugh World! Explora los mares y descubre islas secretas."
+      },
+      "carousel3": {
+        "title": "Personalización",
+        "text": "¡Personaliza todos los atributos de tu personaje y hazlo perfecto para ti!"
+      },
+      "carousel4": {
+        "title": "Magias",
+        "text": "¡Los Lughs tienen magias únicas! Usa sus hechizos para derrotar Lughs salvajes y recolectar objetos raros."
+      },
+      "carousel5": {
+        "title": "Evolución",
+        "text": "Con cada evolución se vuelve más fuerte y con habilidades aún mejores."
+      }
+    }
+  },
+  "faq": {
+    "q1": {
+      "question": "¿Por qué están creando Lugh World?",
+      "answer": "Estamos creando el juego que siempre soñamos jugar: un MMORPG acogedor y único. Queremos entregar un mundo donde puedas ser quien quieras, lleno de aventuras y diversión. Nuestro enfoque es promover una experiencia colaborativa entre los jugadores, para que puedan hacer amigos y explorar nuestro mundo juntos o separados, como cada uno desee. ¡Queremos que Lugh World sea el puerto seguro de nuestros jugadores!"
+    },
+    "q2": {
+      "question": "¿Qué desea entregar Lugh World a los fans de los juegos en línea?",
+      "answer": "Lugh World es un ambicioso proyecto de un juego multijugador en línea (MMORPG), desarrollado por jugadores apasionados por las aventuras y los desafíos. Con la gran promesa de entregar un mundo vasto lleno de magia e historia, Lugh World acompaña a niños en un mundo recién descubierto, donde necesitarán recolectar recursos y evolucionar junto a sus compañeros."
+    },
+    "q3": {
+      "question": "¿Existe historia en Lugh World?",
+      "answer": "¡En Lugh World descubrirás una historia tan grande como tu imaginación! Planeamos crear una experiencia increíblemente inmersiva donde seguirás la historia a medida que avances en el juego. ¡Existen muchos puntos históricos importantes dentro y fuera del juego, tanto en el diseño de las criaturas como en nuestros mapas! ¡Estamos ansiosos por entregar una historia emocionante y revolucionaria para los amantes de los mundos de fantasía!"
+    },
+    "q4": {
+      "question": "¿Cuándo estará listo Lugh World para jugar?",
+      "answer": "Ya estamos en línea, actualmente en fase de pruebas Pre-Alpha junto a los patrocinadores del proyecto. ¡Hazte patrocinador y ven a jugar! Nuestro objetivo es crear un mundo increíble, lleno de detalles y con calidad. Todo nuestro equipo está comprometido y trabajando duro para garantizar que logremos este objetivo. Puedes seguir en nuestro sitio web la etapa en la que nos encontramos en el proceso de desarrollo."
+    },
+    "q5": {
+      "question": "¿Cómo puedo formar parte del equipo de pruebas de Lugh World?",
+      "answer": "¡Solo necesitas hacerte patrocinador y comenzar a probar hoy mismo! En Lugh World creemos en el poder de la creatividad y en la importancia del contacto directo con los jugadores. Construimos todo nuestro proceso creativo desde el principio para ser independientes, para que podamos seguir creando un juego increíble para ti. Por eso, creamos paquetes que te permiten apoyarnos en este proyecto y recibir recompensas exclusivas. Si quieres ser parte del equipo de pruebas o simplemente jugar con nosotros, considera hacerte patrocinador del proyecto."
+    },
+    "q6": {
+      "question": "¿Cuáles son los requisitos mínimos?",
+      "answer": "Requisitos para PC: Procesador: Intel i3 6100T 3.2Ghz o similar\n\nMemoria: 4 GB de RAM\n\nTarjeta gráfica: Nvidia GTX 670 o similar\n\nDirectX: Versión 12\n\nAlmacenamiento: 5 GB de espacio disponible"
+    },
+    "q7": {
+      "question": "¿Para qué plataformas se lanzará el juego?",
+      "answer": "Actualmente nuestro enfoque está en desarrollar el juego para PC. En el futuro queremos ponerlo a disposición para móviles y consolas."
+    }
+  },
+  "cardBruno": {
+    "title": "¿Interesado en Lugh World?",
+    "text": "¡Únete a nuestra comunidad!",
+    "btnText": "Entrar en Discord"
+  },
+  "footer": {
+    "socials": "Sigue Lugh World:",
+    "language": "Idioma:",
+    "copyright": "© 2025 Lughsoft Informática LTDA. Todos los derechos reservados.",
+    "address": "Lughsoft Informática LTDA - CNPJ: 45.839.134/0001-31\n\nDirección: Rua Francisco Rattani, 7187, CEP: 81110-070 -\n\nCapão Raso - Curitiba - Paraná - Brasil"
+  }
+}

@@ -1,0 +1,340 @@
+.wrapper {
+  height: fit-content;
+  background-image: url("../../Assets/bg_faq.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  padding: 40px 24px;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    padding: 48px 56px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .wrapper {
+    padding: 48px 120px;
+  }
+}
+
+/* ===== Header ===== */
+.headerWrap {
+  position: relative;
+  padding-top: 18px;
+  margin-bottom: 24px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.headerBadge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--roxo-branding, #7d55ff);
+  color: #fff;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
+.headerBadge > i {
+  width: 10px;
+  height: 10px;
+  border: 2px solid #fff;
+  transform: rotate(45deg);
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.headerTabs {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  gap: 18px;
+
+  /* controles do triângulo (abaixo do título, à ESQUERDA) */
+  --caret-left: 25px; /* ajuste fino: centralize sob o texto "FAQ" */
+  --caret-width: 15px; /* base do triângulo */
+  --gap: 6px; /* “respiro” lateral na linha */
+}
+
+@media (min-width: 768px) {
+  .headerTabs {
+    --caret-left: 33px;
+    --caret-width: 18px;
+  }
+}
+
+.headerTab {
+  position: relative;
+  background: transparent;
+  border: 0;
+  padding: 8px 10px 6px;
+  cursor: default;
+
+  color: #278ec9;
+  text-align: right;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: 0.7px;
+}
+
+.headerTabActive {
+  color: var(--azul-branding, #2a83c8);
+}
+
+@media (min-width: 768px) {
+  .headerTab {
+    font-size: 24px;
+  }
+}
+
+/* Triângulo com react-icons (apontando pra CIMA e à ESQUERDA) */
+.caret {
+  position: absolute;
+  left: calc(var(--caret-left) - (var(--caret-width) / 2));
+  bottom: -13px;
+  z-index: 2;
+  line-height: 0;
+}
+
+.caret svg {
+  display: block;
+  width: var(--caret-width);
+  height: auto;
+  color: var(--azul-branding, #2a83c8);
+}
+
+/* Linha com “buraco” exatamente ao redor do triângulo (à ESQUERDA) */
+.headerRail {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  border-radius: 2px;
+  z-index: 1;
+
+  background: linear-gradient(
+    90deg,
+    var(--azul-branding) 0
+      calc(var(--caret-left) - var(--caret-width) / 2 - var(--gap)),
+    transparent calc(var(--caret-left) - var(--caret-width) / 2 - var(--gap))
+      calc(var(--caret-left) + var(--caret-width) / 2 + var(--gap)),
+    var(--azul-branding)
+      calc(var(--caret-left) + var(--caret-width) / 2 + var(--gap)) 100%
+  );
+  opacity: 0.9;
+}
+
+/* ===== Lista/itens ===== */
+.item {
+  width: 100%;
+  max-width: 1200px;
+  --padX: 24px;
+  --gapX: 16px;
+  --numW: 72px;
+}
+
+.trigger {
+  width: 100%;
+  display: grid;
+  grid-template-columns: var(--numW) 1fr auto;
+  align-items: center;
+  gap: var(--gapX);
+
+  padding: 20px var(--padX);
+  background: rgba(0, 0, 0, 0);
+  border: 2px solid;
+  border-color: rgba(9, 50, 80, 0.45);
+  border-radius: 22px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.trigger:focus-visible {
+  outline: 3px solid rgba(0, 122, 255, 0.4);
+  outline-offset: 2px;
+  border-radius: 18px;
+}
+
+.number {
+  color: var(--azul-branding, #2a83c8);
+  font-weight: 800;
+  font-size: clamp(36px, 7vw, 48px);
+  line-height: 1;
+}
+
+.question {
+  color: var(--Navy---Branding-Color, #013b51);
+  text-align: left;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.4px;
+}
+
+@media (min-width: 1200px) {
+  .question {
+    font-size: 28px;
+  }
+}
+
+.chevron {
+  --size: 18px;
+  width: var(--size);
+  height: var(--size);
+  position: relative;
+  transition: transform 0.25s ease;
+}
+
+.chevron::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #0b2d3f;
+  border-bottom: 2px solid #0b2d3f;
+  transform: rotate(45deg);
+}
+
+.item[data-open="true"] .chevron {
+  transform: rotate(180deg);
+}
+
+.collapse {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.28s ease;
+  margin-top: 10px;
+}
+
+.collapse > div {
+  overflow: hidden;
+}
+
+.collapse[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+
+.answer {
+  padding-left: 24px;
+  font-size: 16px;
+  text-align: left;
+  color: var(--Black-2---Branding-Color, #282828);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1px;
+}
+
+@media (min-width: 1200px) {
+  .answer {
+    font-size: 20px;
+  }
+}
+
+.cardDiscordBox {
+  width: 88%;
+  max-width: 500px;
+  padding-top: 70px;
+  position: relative;
+}
+
+@media (min-width: 1200px) {
+  .cardDiscordBox {
+    display: none;
+  }
+}
+
+.cardDiscord {
+  width: 100%;
+}
+
+.cardDiscordImg {
+  height: 151px;
+  width: 100%;
+  background-image: url("../../Assets/bg_bruno.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  border-radius: 16px 16px 0 0;
+}
+
+.cardDiscordImg img {
+  position: absolute;
+  min-width: 325px;
+  width: 80%;
+  top: -65px;
+  left: 60%;
+  transform: translateX(-50%);
+}
+
+.cardDiscordText {
+  width: 100%;
+  display: flex;
+  padding: 40px 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  border-radius: 0 0 16px 16px;
+  background: var(--Primary---Branding-Color, #278ec9);
+  position: relative;
+  z-index: 10;
+  color: var(--branco);
+}
+
+.cardDiscordText h1 {
+  text-align: center;
+  font-family: Gokhan;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.cardDiscordText p {
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.cardDiscordText button {
+  display: flex;
+  width: 262px;
+  height: 54px;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  border-radius: 14px;
+  border: 2px solid var(--White---Branding-Color, #fff);
+  color: var(--White---Branding-Color, #fff);
+  text-align: right;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}

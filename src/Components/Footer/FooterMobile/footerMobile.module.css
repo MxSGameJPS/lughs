@@ -1,0 +1,136 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #0a5671;
+  padding: 40px;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    flex-direction: row-reverse;
+    padding: 48px 56px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .wrapper {
+    padding: 48px 120px;
+    display: none;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.title {
+  color: var(--branco);
+  font-family: Gokhan;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1px;
+}
+
+.socialRow {
+  display: flex;
+  gap: 18px;
+}
+.iconButton {
+}
+
+.langRow {
+  justify-content: space-between;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--branco);
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.langRow > span {
+  color: var(--branco);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.linksGrid {
+  width: 100%;
+  display: flex;
+}
+
+.linksGrid div {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.linksGrid button {
+  color: var(--branco);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: auto;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+  width: 100%;
+  text-align: left;
+}
+
+.companyInfo {
+  text-align: center;
+  color: var(--branco);
+  font-size: 11.5px;
+  line-height: 1.5;
+}
+
+.logosRow {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoBox {
+  border-radius: 10px;
+}
+
+.copyBar {
+  color: var(--branco);
+  text-align: center;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+}
+
+.contactButton {
+  display: flex;
+  padding: 8px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 12px;
+  border: 2px solid var(--White---Branding-Color, #fff);
+  color: var(--White---Branding-Color, #fff);
+  font-family: Sora;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+}

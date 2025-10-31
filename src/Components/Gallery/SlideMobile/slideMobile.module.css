@@ -1,0 +1,106 @@
+.wrap {
+  display: grid;
+  gap: 24px;
+  justify-items: center;
+  margin: 24px 0;
+}
+
+@media (min-width: 1200px) {
+  .wrap {
+    display: none;
+  }
+}
+
+.main {
+  position: relative;
+  width: 100%;
+}
+
+.main img {
+  width: 85%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  margin: 0 auto;
+  object-fit: cover;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* nav buttons are applied with plain class names in JSX; keep global selectors */
+:global(.nav) {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: var(--bg-navy);
+  cursor: pointer;
+  transition: transform 0.15s, opacity 0.15s;
+}
+
+:global(.nav:hover) {
+  transform: translateY(-50%) scale(1.05);
+}
+:global(.prev) {
+  left: -14px;
+}
+:global(.next) {
+  right: -14px;
+}
+
+.caption {
+  text-align: center;
+  max-width: 420px;
+  padding: 0 12px;
+}
+
+.caption h4 {
+  color: var(--bg-navy);
+  text-align: center;
+  font-family: Sora;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.caption p {
+  color: var(--bg-navy);
+  font-family: Sora;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.thumbs {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+  padding: 2px 4px 6px;
+  overflow-x: auto;
+}
+
+.thumbs button {
+  border: 2px solid transparent;
+  border-radius: 10px;
+  background: transparent;
+  padding: 0;
+  flex: 0 0 auto;
+  cursor: pointer;
+  transition: transform 0.15s, border-color 0.15s;
+}
+
+:global(.thumbs button.active) {
+  border-color: var(--laranja-2, #ff8a00);
+  transform: translateY(-2px);
+}
+
+.thumbs img {
+  width: 129px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}

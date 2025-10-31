@@ -1,0 +1,17 @@
+.iconButton {
+  border: 2px solid var(--branco);
+  padding: 5px;
+  height: fit-content;
+  background: transparent;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+}
+
+.avatarSmall {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}

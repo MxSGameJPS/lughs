@@ -1,0 +1,98 @@
+{
+  "buttons": {
+    "wishlist": "Add Wish List",
+    "discord": "Join Discord",
+    "follow": "Follow us",
+    "prismatic": "Prismatic",
+    "regular": "Regular"
+  },
+  "menu": {
+    "home": "Home",
+    "about": "About",
+    "lughs": "Lughs",
+    "gallery": "Gallery",
+    "video": "Video",
+    "faq": "FAQ",
+    "alt": "Logo"
+  },
+  "about": {
+    "title": "Your Journey Starts Now!",
+    "subtitle": "Lugh World is a cozy MMORPG where you can be whoever you want! Explore, capture creatures, make friends, and live a grand, magical adventure."
+  },
+  "lughs": {
+    "anky": {
+      "text": "The daisy on its forehead is used to absorb solar energy, making them move faster. Ankyloseeds also learn to release the stored energy as an attack, reaching considerable distances! When they are born, they stay close to the nest until they evolve.",
+      "subText": "Fun fact: Be very careful because the parents of Ankylosseeds are extremely territorial and never leave the nest unprotected."
+    },
+    "araupi": {
+      "text": "Araupis are extremely eye-catching Lughs because of their colors. Despite their small size, they have a strong beak capable of cutting tree trunks and splitting rocks.",
+      "subText": "At this stage of life, they are learning to fly, so they spend most of their time on the ground, but whenever they can, they flap their wings to reach higher branches, which makes them cute yet clumsy Lughs."
+    }
+  },
+  "gallery": {
+    "title": "A WORLD TO EXPLORE!",
+    "carousel": {
+      "carousel1": {
+        "title": "Your best friend!",
+        "text": "Whenever your Lugh is out of the crystal, it will accompany you!"
+      },
+      "carousel2": {
+        "title": "Swimming",
+        "text": "Swim along Lugh World's beaches! Explore the seas and discover secret islands!"
+      },
+      "carousel3": {
+        "title": "Customization",
+        "text": "Customize all your character’s attributes and make it perfect for you!"
+      },
+      "carousel4": {
+        "title": "Spells",
+        "text": "Lughs have unique spells! Use their magic to defeat wild Lughs and collect rare items!"
+      },
+      "carousel5": {
+        "title": "Evolution",
+        "text": "With each evolution it becomes stronger and gains even better abilities."
+      }
+    }
+  },
+  "faq": {
+    "q1": {
+      "question": "Why are you creating Lugh World?",
+      "answer": "We are creating the game we've always dreamed of playing—a cozy and unique MMORPG. We want to deliver a world where you can be whoever you want, full of adventure and fun. Our focus is to foster a collaborative experience among players so they can make friends and explore our world together or solo, as each one prefers! We want Lugh World to be a safe harbor for our players!"
+    },
+    "q2": {
+      "question": "What does Lugh World aim to deliver to online game fans?",
+      "answer": "Lugh World is an ambitious online multiplayer (MMORPG) project, developed by players passionate about adventure and challenges. With a strong promise to deliver a vast world filled with magic and story, Lugh World follows children in a newly discovered world where they’ll need to gather resources and evolve alongside their partners."
+    },
+    "q3": {
+      "question": "Is there a story in Lugh World?",
+      "answer": "In Lugh World you will uncover a story as big as your imagination! We plan to create an incredibly immersive experience in which you will follow the story as you progress through the game! There are many important historical points inside and outside the game, both in the creature designs and in our maps! We’re excited to deliver an emotional and groundbreaking story for fans of fantasy worlds!"
+    },
+    "q4": {
+      "question": "When will Lugh World be ready to play?",
+      "answer": "We’re already online, currently in a Pre-Alpha testing phase with project supporters—become a supporter and come play! Our goal is to create an amazing, highly detailed, quality world! Our entire team is committed and working hard to ensure we reach this goal. You can follow our development stage on our website."
+    },
+    "q5": {
+      "question": "How can I join Lugh World's testing team?",
+      "answer": "Just become a supporter and start testing today! At Lugh World, we believe in the power of creativity and in the importance of direct contact with players. We built our entire creative process from the beginning to be independent so we can keep creating an awesome game for you. That’s why we created tiers that let you support this project and receive exclusive rewards! If you want to be part of the testing team or just play with us, consider becoming a project supporter."
+    },
+    "q6": {
+      "question": "What are the minimum requirements?",
+      "answer": "PC requirements: Processor: Intel i3 6100T 3.2GHz or similar\n\nMemory: 4 GB RAM\n\nGraphics card: Nvidia GTX 670 or similar\n\nDirectX: Version 12\n\nStorage: 5 GB available space"
+    },
+    "q7": {
+      "question": "Which platforms will the game launch on?",
+      "answer": "Right now our focus is developing the game for PC. In the future we want to make it available for Mobile and Consoles."
+    }
+  },
+  "cardBruno": {
+    "title": "Interested in Lugh World?",
+    "text": "Join our community!",
+    "btnText": "Join Discord"
+  },
+  "footer": {
+    "socials": "Follow Lugh World:",
+    "language": "Language:",
+    "copyright": "© 2025 Lughsoft Informática LTDA. All rights reserved.",
+    "address": "Lughsoft Informática LTDA - CNPJ: 45.839.134/0001-31\n\nAddress: Rua Francisco Rattani, 7187, ZIP: 81110-070 -\n\nCapão Raso - Curitiba - Paraná - Brazil"
+  }
+}

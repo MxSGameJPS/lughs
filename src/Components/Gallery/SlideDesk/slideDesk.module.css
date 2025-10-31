@@ -1,0 +1,116 @@
+/* CSS variables intentionally omitted here; keep if needed later */
+
+.wrap {
+  display: none;
+  position: relative;
+}
+
+@media (min-width: 1200px) {
+  .wrap {
+    display: block;
+    margin: 24px 0;
+  }
+}
+
+.stage {
+  position: relative;
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* Swiper uses global class names; keep selectors global so they match */
+:global(.mySwiper) {
+  width: 80%;
+  opacity: 0;
+  padding-bottom: 32px;
+}
+
+:global(.mySwiper.swiper-initialized) {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+:global(.slide.swiper-slide) {
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  background: #000;
+}
+
+:global(.slide img) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+  pointer-events: none;
+}
+
+:global(.swiper-pagination) {
+  position: static;
+  margin-top: 10px;
+}
+:global(.swiper-pagination-bullet) {
+  opacity: 0.5;
+}
+:global(.swiper-pagination-bullet-active) {
+  opacity: 1;
+}
+
+.caption {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.captionTitle {
+  color: var(--bg-navy);
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.captionText {
+  color: var(--bg-navy);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  background: transparent;
+  padding: 0;
+  width: 78px;
+  height: 79px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.arrow.prev {
+  left: 0;
+}
+.arrow.next {
+  right: 0;
+}
+
+.arrow svg {
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.45));
+}
+.arrow:hover svg path {
+  stroke: #36a1ff;
+}
+.arrow:focus-visible {
+  outline: 2px solid #36a1ff;
+  outline-offset: 4px;
+}
