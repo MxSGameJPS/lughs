@@ -83,12 +83,13 @@
   .textbox h1 {
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: 64px;
+    font-size: 57px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     letter-spacing: 3.2px;
     text-transform: uppercase;
+    min-width: 600px;
   }
 
   .textbox p {
