@@ -1,28 +1,28 @@
-import { useState } from 'react'
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { LughsMobile } from './LughsMobile'
-import { LughsDesk } from './LughsDesk';
+import { LughsMobile } from "./LughsMobile";
+import { LughsDesk } from "./LughsDesk";
 
-import bgRegular from '../../Assets/bg_lughs.png'
-import bgPrismatic from '../../Assets/bg_lughs_prismatico.png'
+import bgRegular from "../../Assets/bg_lughs.png";
+import bgPrismatic from "../../Assets/bg_lughs_prismatico.png";
 
-import anky from '../../Assets/Anky.png'
-import ankyPrismatic from '../../Assets/Anky_prismatico.png'
-import araupi from '../../Assets/araupi.png'
-import araupiPrismatic from '../../Assets/araupi_prismatico.png'
+import anky from "../../Assets/Anky.png";
+import ankyPrismatic from "../../Assets/Anky_prismatico.png";
+import araupi from "../../Assets/araupi.png";
+import araupiPrismatic from "../../Assets/araupi_prismatico.png";
 
-import estrelasAnky from '../../Assets/estrelas_anky.png'
-import estrelasAraupi from '../../Assets/estrelas_araupi.png'
-import iconGrass from '../../Assets/icon_grass.png'
-import iconVoador from '../../Assets/icon_voador.png'
+import estrelasAnky from "../../Assets/estrelas_anky.png";
+import estrelasAraupi from "../../Assets/estrelas_araupi.png";
+import iconGrass from "../../Assets/icon_grass.png";
+import iconVoador from "../../Assets/icon_voador.png";
 
-import btnAnky from '../../Assets/btn_anky.png'
-import btnAnkySelection from '../../Assets/btn_anky_selecionado.png'
-import btnAnkyPrismaticSelection from '../../Assets/btn_anky_prismatico_selecionado.png'
-import btnAraupi from '../../Assets/btn_araupi.png'
-import btnAraupiSelection from '../../Assets/btn_araupi_selecionado.png'
-import btnAraupiPrismaticSelection from '../../Assets/btn_araupi_prismatico_selecionado.png'
-import { DownBtn } from '../DownBtn';
+import btnAnky from "../../Assets/btn_anky.png";
+import btnAnkySelection from "../../Assets/btn_anky_selecionado.png";
+import btnAnkyPrismaticSelection from "../../Assets/btn_anky_prismatico_selecionado.png";
+import btnAraupi from "../../Assets/btn_araupi.png";
+import btnAraupiSelection from "../../Assets/btn_araupi_selecionado.png";
+import btnAraupiPrismaticSelection from "../../Assets/btn_araupi_prismatico_selecionado.png";
+import { DownBtn } from "../DownBtn";
 
 export const Lughs = () => {
   const [prismaticById, setPrismaticById] = useState({
@@ -44,8 +44,12 @@ export const Lughs = () => {
       subText: t("lughs.anky.subText"),
       image: prismaticById.ANKY ? ankyPrismatic : anky,
       prismatic: prismaticById.ANKY,
+      buttonRegular: t("buttons.regular"),
+      buttonPrismatic: t("buttons.prismatic"),
       btn: btnAnky,
-      btnSelection: prismaticById.ANKY ? btnAnkyPrismaticSelection : btnAnkySelection
+      btnSelection: prismaticById.ANKY
+        ? btnAnkyPrismaticSelection
+        : btnAnkySelection,
     },
     {
       name: "ARAUPI",
@@ -57,9 +61,13 @@ export const Lughs = () => {
       subText: t("lughs.araupi.subText"),
       image: prismaticById.ARAUPI ? araupiPrismatic : araupi,
       prismatic: prismaticById.ARAUPI,
+      buttonRegular: t("buttons.regular"),
+      buttonPrismatic: t("buttons.prismatic"),
       btn: btnAraupi,
       // >>> aqui estava usando ["ANKY"] por engano
-      btnSelection: prismaticById.ARAUPI ? btnAraupiPrismaticSelection : btnAraupiSelection
+      btnSelection: prismaticById.ARAUPI
+        ? btnAraupiPrismaticSelection
+        : btnAraupiSelection,
     },
   ];
 
@@ -74,18 +82,21 @@ export const Lughs = () => {
 
   const resetPrismaticAll = () => {
     setPrismaticBg(false);
-    setPrismaticById(prev => {
+    setPrismaticById((prev) => {
       // zera todos os ids existentes sem hardcode
       const next = {};
-      Object.keys(prev).forEach(k => { next[k] = false; });
+      Object.keys(prev).forEach((k) => {
+        next[k] = false;
+      });
       return next;
     });
   };
 
   return (
-    <div id='lughs'
+    <div
+      id="lughs"
       style={{
-        position: 'relative'
+        position: "relative",
       }}
     >
       <LughsMobile
@@ -102,14 +113,16 @@ export const Lughs = () => {
         onSelectLugh={resetPrismaticAll}
       />
 
-      <div style={{
-        position: 'absolute',
-        bottom: '24px',
-        width: '100%',
-        display: 'flex',
-        justifyContent: 'center'
-      }}>
-        <DownBtn destination='gallery' />
+      <div
+        style={{
+          position: "absolute",
+          bottom: "24px",
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <DownBtn destination="gallery" />
       </div>
     </div>
   );

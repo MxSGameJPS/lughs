@@ -63,7 +63,7 @@ export const LughsDesk = ({
                 <S.Title>{current.name}</S.Title>
 
                 <S.PrismaticBtn onClick={() => handlePrismatic(current.name)}>
-                  {current.prismatic ? "Regular" : "Prismático"}
+                  {current.prismatic ? current.buttonRegular : current.buttonPrismatic }
                 </S.PrismaticBtn>
 
                 <S.TextBlock>

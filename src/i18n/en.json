@@ -21,10 +21,14 @@
   },
   "lughs": {
     "anky": {
+       "buttonRegular": "Regular",
+      "buttonPrismatic": "Prismatic",
       "text": "The daisy on its forehead is used to absorb solar energy, making them move faster. Ankyloseeds also learn to release the stored energy as an attack, reaching considerable distances! When they are born, they stay close to the nest until they evolve.",
       "subText": "Fun fact: Be very careful because the parents of Ankylosseeds are extremely territorial and never leave the nest unprotected."
     },
     "araupi": {
+        "buttonRegular": "Regular",
+      "buttonPrismatic": "Prismatic",
       "text": "Araupis are extremely eye-catching Lughs because of their colors. Despite their small size, they have a strong beak capable of cutting tree trunks and splitting rocks.",
       "subText": "At this stage of life, they are learning to fly, so they spend most of their time on the ground, but whenever they can, they flap their wings to reach higher branches, which makes them cute yet clumsy Lughs."
     }

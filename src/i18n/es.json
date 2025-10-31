@@ -21,10 +21,14 @@
   },
   "lughs": {
     "anky": {
+      "buttonRegular": "Regular",
+      "buttonPrismatic": "Prismático",
       "text": "La margarita en su frente se utiliza para absorber la energía solar, lo que les permite moverse más rápido. Los Ankyloseeds también aprenden a liberar la energía almacenada en forma de ataque, alcanzando distancias considerables. Al nacer, permanecen cerca del nido hasta evolucionar.",
       "subText": "Curiosidad: Ten mucho cuidado porque los padres de Ankylosseeds son extremadamente territoriales y nunca dejan el nido desprotegido."
     },
     "araupi": {
+      "buttonRegular": "Regular",
+      "buttonPrismatic": "Prismático",
       "text": "Los Araupis son Lughs extremadamente llamativos por sus colores. A pesar de su pequeño tamaño, tienen un pico fuerte capaz de cortar troncos de árboles y partir rocas.",
       "subText": "En esta etapa de la vida están aprendiendo a volar, por lo que pasan la mayor parte del tiempo en el suelo, pero siempre que pueden baten las alas para alcanzar ramas más altas, lo que los hace Lughs adorables pero torpes."
     }
