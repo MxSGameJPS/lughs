@@ -34,3 +34,13 @@
     top: 45%;
   }
 }
+
+/* Ensure parallax image is visible on small screens (<=760px) */
+@media (max-width: 760px) {
+  .parallaxImg {
+    z-index: 4; /* place above personagens image if necessary */
+    width: 66%;
+    top: 18%;
+    left: 52%;
+  }
+}
