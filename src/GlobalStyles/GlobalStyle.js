@@ -17,14 +17,16 @@ export const GlobalStyle = createGlobalStyle`
   /* Sora pelo Google Fonts */
   @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap');
 
-  /* Gokhan — arquivo em public/fonts */
   @font-face {
-    font-family: 'Gokhan';
-    src: url('/fonts/Gokhan.ttf') format('truetype');
+    font-family: 'LughFont';
+    src: url('/fonts/LughFont.otf') format('opentype');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
   }
+
+  /* LughFont — arquivo em public/fonts (novo) */
+  
 
   /* ======= RESET CSS ======= */
   *, *::before, *::after {
@@ -45,7 +47,8 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.5;
     background-color: #fff;
     color: #000;
-    font-family: 'Sora', sans-serif; /* 👉 Sora é a fonte default */
+    /* usar LughFont como primeira prioridade, com Sora como fallback */
+    font-family: 'LughFont', 'Sora', sans-serif;
   }
 
   ul, ol {
