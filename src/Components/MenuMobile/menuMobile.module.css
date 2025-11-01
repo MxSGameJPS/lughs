@@ -1,7 +1,7 @@
 /* convertido de MenuMobile/styles.js */
 .wrapper {
   display: flex;
-  height: 80px;
+  height: 100px;
   width: 100%;
   background-color: var(--azul-branding);
   justify-content: space-between;
@@ -48,11 +48,13 @@
   background-color: var(--bg-navy);
   width: 340px;
   max-width: 85vw;
-  height: auto; /* let content define height */
+  height: 100vh; /* let content define height */
   max-height: calc(100vh - 120px); /* reduce full-screen appearance */
   align-items: flex-start;
   padding: 24px 28px;
   margin-top: 0px; /* give breathing room from top */
+  /* push menuBox to the right side so modal opens from the opposite side */
+  margin-left: auto;
   overflow-y: auto; /* allow scrolling when content exceeds max-height */
   z-index: 10011; /* sit above modal background and hero images */
 }

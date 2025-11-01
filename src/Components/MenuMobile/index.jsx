@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { IoCloseSharp } from "react-icons/io5";
 import logo from "../../Assets/logo.png";
 import { useTranslation } from "react-i18next";
@@ -11,6 +11,22 @@ import styles from "./menuMobile.module.css";
 export const MenuMobile = () => {
   const [open, setOpen] = useState(false);
   const { t } = useTranslation();
+
+  // bloquear scroll do body enquanto o menu mobile estiver aberto
+  useEffect(() => {
+    const originalBodyOverflow = document.body.style.overflow;
+    const originalHtmlOverflow = document.documentElement.style.overflow;
+
+    if (open) {
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+    }
+
+    return () => {
+      document.body.style.overflow = originalBodyOverflow;
+      document.documentElement.style.overflow = originalHtmlOverflow;
+    };
+  }, [open]);
 
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
