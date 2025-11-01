@@ -7,29 +7,30 @@ import personagensImage from "../../Assets/personagens_hero.png";
 import depth3Image from "../../Assets/crystal-isolado.png";
 
 const defaultImages = {
-  depth1: depth1Image,
-  depth2: [logoImage, personagensImage],
+  // agora depth1 pode ter múltiplas imagens (frente) e depth2 é a camada do meio com uma imagem
+  depth1: [depth1Image, logoImage],
+  depth2: personagensImage,
   depth3: depth3Image,
 };
 
 const defaultIntensity = {
   depth1: 0.01,
-  depth2: 0.02,
-  depth3: 0.06,
+  depth2: 0.01,
+  depth3: 0.02,
 };
 
 const defaultSizes = {
-  depth1: "cover",
-  depth2: ["clamp(180px, 22vw, 320px) auto", "clamp(360px, 46vw, 760px) auto"],
+  depth1: ["cover", "clamp(180px, 22vw, 320px) auto"],
+  depth2: ["clamp(360px, 46vw, 760px) auto"],
   depth3: "clamp(200px, 46vw, 360px) auto",
 };
 
 const defaultAnchors = {
-  depth1: [50, 52],
-  depth2: [
+  depth1: [
+    [50, 52],
     [18, 52],
-    [78, 60],
   ],
+  depth2: [78, 60],
   depth3: [71, 70],
 };
 
@@ -98,10 +99,8 @@ export const ParallaxBackground = ({
     };
 
     const resolvedAnchors = {
-      depth1: ensureAnchorPair(
-        anchors?.depth1 ?? defaultAnchors.depth1,
-        defaultAnchors.depth1
-      ),
+      // depth1 agora pode ser uma lista de anchors (normalizamos mais abaixo)
+      depth1: anchors?.depth1 ?? defaultAnchors.depth1,
       depth2: normalizeAnchorList(
         anchors?.depth2 ?? defaultAnchors.depth2,
         defaultAnchors.depth2
@@ -121,6 +120,58 @@ export const ParallaxBackground = ({
 
     const data = [];
 
+    // front (depth1) deve ficar no topo — colocamos estas imagens primeiro na lista
+    const frontImages = toArray(resolvedImages.depth1);
+    const frontSizes = toArray(resolvedSizes.depth1 ?? defaultSizes.depth1);
+    const frontAnchors = normalizeAnchorList(resolvedAnchors.depth1, [
+      defaultAnchors.depth1,
+    ]);
+
+    // Construímos as entradas para frontImages preservando índices de size/anchor,
+    // depois invertemos a ordem ao inserir em `data` para que a última imagem
+    // do array (por exemplo a `logo`) seja colocada primeiro no `background-image`
+    // e apareça no topo.
+    const frontEntries = frontImages
+      .map((src, index) => {
+        if (!src) return null;
+
+        const size =
+          frontSizes[index] ??
+          frontSizes[frontSizes.length - 1] ??
+          (Array.isArray(defaultSizes.depth1)
+            ? defaultSizes.depth1[
+                Math.min(index, defaultSizes.depth1.length - 1)
+              ]
+            : defaultSizes.depth1);
+
+        const anchor = ensureAnchorPair(
+          frontAnchors[index] ??
+            frontAnchors[frontAnchors.length - 1] ??
+            defaultAnchors.depth1,
+          defaultAnchors.depth1
+        );
+
+        return {
+          src,
+          depth: resolvedIntensity.depth1,
+          size,
+          anchor,
+        };
+      })
+      .filter(Boolean);
+
+    // Separar a entrada de background (assumimos que a primeira imagem do array
+    // `depth1` é o background grande) das imagens de topo (logo etc.). Vamos
+    // inserir as logos por cima, depois as camadas do meio, depois depth3 e por
+    // último o background, garantindo que nada seja coberto indevidamente.
+    const bgEntry = frontEntries.length ? frontEntries[0] : null;
+    const topFrontEntries =
+      frontEntries.length > 1 ? frontEntries.slice(1).reverse() : [];
+
+    // inserir logos/topo
+    topFrontEntries.forEach((entry) => data.push(entry));
+
+    // inserir depth3 antes do depth2 para que depth3 fique na frente do depth2
     if (resolvedImages.depth3) {
       data.push({
         src: resolvedImages.depth3,
@@ -130,6 +181,7 @@ export const ParallaxBackground = ({
       });
     }
 
+    // middle (depth2)
     middleImages.forEach((src, index) => {
       if (!src) return;
 
@@ -157,13 +209,9 @@ export const ParallaxBackground = ({
       });
     });
 
-    if (resolvedImages.depth1) {
-      data.push({
-        src: resolvedImages.depth1,
-        depth: resolvedIntensity.depth1,
-        size: resolvedSizes.depth1 ?? defaultSizes.depth1,
-        anchor: resolvedAnchors.depth1,
-      });
+    // inserir o background (primeira imagem do depth1) por baixo de tudo
+    if (bgEntry) {
+      data.push(bgEntry);
     }
 
     return data;
