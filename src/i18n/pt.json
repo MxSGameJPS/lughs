@@ -3,8 +3,8 @@
     "wishlist": "Add Wish List",
     "discord": "Entrar no Discord",
     "follow": "siga-nos",
-    "prismatic": "Prismático",
-    "regular": "Regular"
+    "prismatic": "Ver Versão Prismática",
+    "regular": "Ver Versão Regular"
   },
   "menu": {
     "home": "Início",
@@ -22,13 +22,13 @@
   "lughs": {
     "anky": {
       "buttonRegular": "Regular",
-      "buttonPrismatic": "Prismático",
+      "buttonPrismatic": "Ver Versão Prismática",
       "text": "A margarida em sua testa é usada para absorver a energia solar, fazendo assim, se locomoverem mais rápido. Ankyloseeds aprendem também a disparar a energia armazenada em forma de ataque, atingindo distâncias consideráveis!Ao nascerem, permanecem próximos ao ninho até evoluírem.",
       "subText": "Curiosidade: Tome muito cuidado pois os pais de Ankylosseds são extremamente territoriais e nunca deixam o ninho desprotegido."
     },
     "araupi": {
-       "buttonRegular": "Regular",
-      "buttonPrismatic": "Prismático",
+      "buttonRegular": "Regular",
+      "buttonPrismatic": "Ver Versão Prismática",
       "text": "Araupis são Lugh's extremamente chamativos pelas suas cores. Apesar de seu porte pequeno, possuem um bico forte capaz de cortar troncos de árvores e partir rochas.",
       "subText": "Nesse estágio da vida, estão aprendendo a voar, por isso passam a maior parte do tempo no solo mas, sempre que podem, batem as asas para alcançar galhos mais altos, o que as fazem serem Lugh's fofos, porém desajeitados"
     }

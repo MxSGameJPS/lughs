@@ -4,18 +4,17 @@ export const Wrapper = styled.div`
   background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 40px 24px ;
+  padding: 40px 24px;
   width: 100%;
   height: 1080px;
   display: none;
 
-
-@media (min-width: 1200px) {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 33px;
-}
+  @media (min-width: 1200px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 33px;
+  }
 `;
 
 export const Grid = styled.div`
@@ -31,7 +30,7 @@ export const Left = styled.div`
   flex-direction: column;
   gap: 64px;
 
-  svg{
+  svg {
     color: var(--branco);
   }
 `;
@@ -49,7 +48,6 @@ export const Badges = styled.div`
     font-weight: 700;
     line-height: normal;
   }
-
 `;
 
 export const Title = styled.h2`
@@ -67,7 +65,7 @@ export const Title = styled.h2`
 
 export const PrismaticBtn = styled.div`
   display: flex;
-  width: 250px;
+  width: 350px;
   height: 54px;
   padding: 40px;
   justify-content: center;
@@ -79,17 +77,19 @@ export const PrismaticBtn = styled.div`
   border: 2px solid transparent; /* espaço da borda */
 
   /* 👇 Fundo preto + borda gradiente */
-  background: 
-    linear-gradient(var(--Black-2---Branding-Color, #282828), var(--Black-2---Branding-Color, #282828)) padding-box,
-    linear-gradient(90deg, #01FFFF, #7F4BD9 55.29%, #E54AB5) border-box;
+  background: linear-gradient(
+        var(--Black-2---Branding-Color, #282828),
+        var(--Black-2---Branding-Color, #282828)
+      )
+      padding-box,
+    linear-gradient(90deg, #01ffff, #7f4bd9 55.29%, #e54ab5) border-box;
 
-  color: var(--White---Branding-Color, #FFF);
+  color: var(--White---Branding-Color, #fff);
   text-align: center;
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  
 `;
 
 export const TextBlock = styled.div`
@@ -119,18 +119,19 @@ export const Dots = styled.div`
     border: none;
     background: rgba(255, 255, 255, 0.7);
     cursor: pointer;
-    transition: transform .15s, background .15s, opacity .15s;
-    opacity: .9;
+    transition: transform 0.15s, background 0.15s, opacity 0.15s;
+    opacity: 0.9;
 
-    &:hover { transform: scale(1.12); }
+    &:hover {
+      transform: scale(1.12);
+    }
 
     &.active {
-      background: var(--laranja-2, #FF8A00);
+      background: var(--laranja-2, #ff8a00);
       opacity: 1;
     }
   }
 `;
-
 
 export const Right = styled.div`
   position: relative;
@@ -141,7 +142,7 @@ export const Right = styled.div`
     max-height: 520px;
     width: auto;
     object-fit: contain;
-    filter: drop-shadow(0 8px 24px rgba(0,0,0,.35));
+    filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.35));
   }
 `;
 
