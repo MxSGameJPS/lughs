@@ -54,7 +54,7 @@ export const FooterDesk = () => {
               <button className={styles.iconButton}
               onClick={() =>
               window.open(
-                "https://discord.com/invite/QvG8d3TEXz",
+                "https://www.instagram.com/lughworld/",
                 "_blank",
                 "noopener,noreferrer"
               )

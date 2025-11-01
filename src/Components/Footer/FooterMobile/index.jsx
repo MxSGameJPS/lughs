@@ -26,15 +26,39 @@ export const FooterMobile = () => {
         <h2 className={styles.title}>{t("footer.socials")}</h2>
 
         <div className={styles.socialRow}>
-          <button className={styles.iconButton}>
+          <button className={styles.iconButton}
+           onClick={() =>
+              window.open(
+                "https://www.instagram.com/lughworld/",
+                "_blank",
+                "noopener,noreferrer"
+              )
+            }
+          >
             <img src={instagram} alt="instagram" />
           </button>
 
-          <button className={styles.iconButton}>
+          <button className={styles.iconButton}
+           onClick={() =>
+              window.open(
+                "https://www.youtube.com/@LughWorld/featured",
+                "_blank",
+                "noopener,noreferrer"
+              )
+            }
+          >
             <img src={youtube} alt="instagram" />
           </button>
 
-          <button className={styles.iconButton}>
+          <button className={styles.iconButton}
+           onClick={() =>
+              window.open(
+                "https://discord.gg/hXtfpeYm",
+                "_blank",
+                "noopener,noreferrer"
+              )
+            }
+          >
             <img src={discord} alt="instagram" />
           </button>
         </div>
