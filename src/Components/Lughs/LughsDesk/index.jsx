@@ -62,15 +62,15 @@ export const LughsDesk = ({
 
                 <S.Title>{current.name}</S.Title>
 
-                <S.PrismaticBtn onClick={() => handlePrismatic(current.name)}>
-                  {current.prismatic ? current.buttonRegular : current.buttonPrismatic }
-                </S.PrismaticBtn>
 
                 <S.TextBlock>
                   <p>{current.text}</p>
                   <p>{current.subText}</p>
                 </S.TextBlock>
 
+                <S.PrismaticBtn onClick={() => handlePrismatic(current.name)}>
+                  {current.prismatic ? current.buttonRegular : current.buttonPrismatic }
+                </S.PrismaticBtn>
                 {/* Dots */}
                 <S.Dots>
                   {lughs.map((_, i) => (

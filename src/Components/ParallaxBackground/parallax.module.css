@@ -4,43 +4,13 @@
   right: 0;
   bottom: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  pointer-events: none; /* don't block interactions */
-  z-index: 0; /* sit behind images with higher z-index */
-}
-
-/* Image-based parallax (single image) */
-.parallaxImg {
-  position: absolute;
-  left: 68%;
-  top: 20%;
-  transform: translate(-50%, -50%);
-  width: 40%;
-  max-width: 520px;
-  height: auto;
-  object-fit: contain;
-  will-change: transform;
-  pointer-events: none;
-  z-index: 1;
-}
-
-@media (max-width: 800px) {
-  .parallaxImg {
-    width: 60%;
-    top: 45%;
-  }
-}
-
-/* Ensure parallax image is visible on small screens (<=760px) */
-@media (max-width: 760px) {
-  .parallaxImg {
-    z-index: 4; /* place above personagens image if necessary */
-    width: 66%;
-    top: 18%;
-    left: 52%;
-  }
+  background-size: cover;
+  will-change: background-position;
+  overflow: hidden;
+  z-index: 0;
 }

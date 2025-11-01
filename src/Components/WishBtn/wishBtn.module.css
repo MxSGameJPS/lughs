@@ -6,6 +6,7 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
+  white-space: nowrap;
   border-radius: 8px;
   color: var(--branco);
   background-color: var(--azul-branding);
@@ -42,8 +43,10 @@
 }
 
 .wishBtn img {
-  display: none;
+  display: block;
   margin: 0 !important;
+  width: 24px;
+  height: 24px;
 }
 .wishBtn svg {
   display: block;

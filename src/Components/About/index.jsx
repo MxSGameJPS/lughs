@@ -3,6 +3,7 @@ import monitor from "../../Assets/Monitor.png";
 import styles from "./about.module.css";
 import { WishBtn } from "../WishBtn";
 import { DownBtn } from "../DownBtn";
+import iconBtn from "../../Assets/icon_btn.png";
 
 export const About = () => {
   const { t } = useTranslation();
@@ -33,6 +34,7 @@ export const About = () => {
 
       <div className={styles.wishBtnMobile}>
         <WishBtn />
+        
       </div>
       <div
         style={{

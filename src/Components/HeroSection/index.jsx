@@ -1,15 +1,13 @@
 import { MenuDesk } from "../MenuDesk";
 import { MenuMobile } from "../MenuMobile";
-import logo from "../../Assets/logo_hero.png";
-import personagens from "../../Assets/personagens_hero.png";
 import { ParallaxBackground } from "../ParallaxBackground";
-import camada from "../../Assets/crystal-isolado.png";
 // import LanguageSwitcher from "../LanguageSwitcher";
 import { useTranslation } from "react-i18next";
 import iconBtn from "../../Assets/icon_btn.png";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import styles from "./heroSection.module.css";
 import { DownBtn } from "../DownBtn";
+import MobileHero from "./MobileHero";
 
 export const HeroSection = () => {
   const { t } = useTranslation();
@@ -17,21 +15,15 @@ export const HeroSection = () => {
   return (
     <section id="home" className={styles.wrapper}>
       <MenuMobile />
+      <MobileHero />
+
       <div className={styles.menuDeskBox}>
         <MenuDesk />
         {/* <LanguageSwitcher /> */}
       </div>
 
       <div className={styles.imgBox}>
-        {/* Parallax background sits behind the personagens image */}
-        <ParallaxBackground layers={[camada]}  />
-
-        <img className={styles.imgLogo} src={logo} alt="logo" />
-        <img
-          className={styles.imgPersonagens}
-          src={personagens}
-          alt="personagens"
-        />
+        <ParallaxBackground />
       </div>
       <div className={styles.wishBtnBox}>
         <button className={styles.wishBtn}>
@@ -40,7 +32,9 @@ export const HeroSection = () => {
           <MdOutlineKeyboardArrowRight />
         </button>
       </div>
-      <DownBtn destination="about" />
+      <div className={styles.downBtnWrapper}>
+        <DownBtn destination="about" />
+      </div>
     </section>
   );
 };

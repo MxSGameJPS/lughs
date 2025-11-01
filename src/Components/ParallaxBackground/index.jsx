@@ -1,106 +1,272 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useMemo, useRef } from "react";
 import styles from "./parallax.module.css";
 
-/**
- * ParallaxBackground
- * Props:
- * - layers: array of image URLs ordered from farthest to nearest (if length===1, a single img element will be used)
- * - depthFactors: optional array of numbers controlling movement strength per layer
- */
+import depth1Image from "../../Assets/Background_hero.png";
+import logoImage from "../../Assets/logo_hero.png";
+import personagensImage from "../../Assets/personagens_hero.png";
+import depth3Image from "../../Assets/crystal-isolado.png";
+
+const defaultImages = {
+  depth1: depth1Image,
+  depth2: [logoImage, personagensImage],
+  depth3: depth3Image,
+};
+
+const defaultIntensity = {
+  depth1: 0.01,
+  depth2: 0.02,
+  depth3: 0.06,
+};
+
+const defaultSizes = {
+  depth1: "cover",
+  depth2: ["clamp(180px, 22vw, 320px) auto", "clamp(360px, 46vw, 760px) auto"],
+  depth3: "clamp(200px, 46vw, 360px) auto",
+};
+
+const defaultAnchors = {
+  depth1: [50, 52],
+  depth2: [
+    [18, 52],
+    [78, 60],
+  ],
+  depth3: [71, 70],
+};
+
+const toArray = (value) => {
+  if (Array.isArray(value)) return value;
+  return value != null ? [value] : [];
+};
+
+const ensureAnchorPair = (value, fallbackPair) => {
+  if (Array.isArray(value) && value.length === 2) {
+    const [x, y] = value;
+    const parsedX = Number.isFinite(Number(x)) ? Number(x) : fallbackPair[0];
+    const parsedY = Number.isFinite(Number(y)) ? Number(y) : fallbackPair[1];
+    return [parsedX, parsedY];
+  }
+  return fallbackPair;
+};
+
+const normalizeAnchorList = (value, fallbackList) => {
+  if (Array.isArray(value)) {
+    if (Array.isArray(value[0])) {
+      return value.map((item, index) =>
+        ensureAnchorPair(
+          item,
+          fallbackList[Math.min(index, fallbackList.length - 1)]
+        )
+      );
+    }
+
+    if (value.length === 2) {
+      return [ensureAnchorPair(value, fallbackList[0])];
+    }
+  }
+
+  return fallbackList;
+};
+
 export const ParallaxBackground = ({
-  layers = [],
-  depthFactors = [0.01, 0.02, 0.06],
+  depthImages = defaultImages,
+  intensity = defaultIntensity,
+  sizes = defaultSizes,
+  anchors = defaultAnchors,
+  className = "",
 }) => {
   const containerRef = useRef(null);
-  const imgRef = useRef(null);
   const rafRef = useRef(null);
-  const stateRef = useRef({ tx: 0, ty: 0 });
+  const coordsRef = useRef({ x: 0, y: 0 });
+
+  const layerData = useMemo(() => {
+    const resolvedImages = {
+      depth1: depthImages.depth1 ?? defaultImages.depth1,
+      depth2: depthImages.depth2 ?? defaultImages.depth2,
+      depth3: depthImages.depth3 ?? defaultImages.depth3,
+    };
+
+    const resolvedIntensity = {
+      depth1: intensity?.depth1 ?? defaultIntensity.depth1,
+      depth2: intensity?.depth2 ?? defaultIntensity.depth2,
+      depth3: intensity?.depth3 ?? defaultIntensity.depth3,
+    };
+
+    const resolvedSizes = {
+      depth1: sizes?.depth1 ?? defaultSizes.depth1,
+      depth2: sizes?.depth2 ?? defaultSizes.depth2,
+      depth3: sizes?.depth3 ?? defaultSizes.depth3,
+    };
+
+    const resolvedAnchors = {
+      depth1: ensureAnchorPair(
+        anchors?.depth1 ?? defaultAnchors.depth1,
+        defaultAnchors.depth1
+      ),
+      depth2: normalizeAnchorList(
+        anchors?.depth2 ?? defaultAnchors.depth2,
+        defaultAnchors.depth2
+      ),
+      depth3: ensureAnchorPair(
+        anchors?.depth3 ?? defaultAnchors.depth3,
+        defaultAnchors.depth3
+      ),
+    };
+
+    const middleImages = toArray(resolvedImages.depth2);
+    const middleSizes = toArray(resolvedSizes.depth2 ?? defaultSizes.depth2);
+    const middleAnchors = normalizeAnchorList(
+      resolvedAnchors.depth2,
+      defaultAnchors.depth2
+    );
+
+    const data = [];
+
+    if (resolvedImages.depth3) {
+      data.push({
+        src: resolvedImages.depth3,
+        depth: resolvedIntensity.depth3,
+        size: resolvedSizes.depth3 ?? defaultSizes.depth3,
+        anchor: resolvedAnchors.depth3,
+      });
+    }
+
+    middleImages.forEach((src, index) => {
+      if (!src) return;
+
+      const size =
+        middleSizes[index] ??
+        middleSizes[middleSizes.length - 1] ??
+        (Array.isArray(defaultSizes.depth2)
+          ? defaultSizes.depth2[Math.min(index, defaultSizes.depth2.length - 1)]
+          : defaultSizes.depth2);
+
+      const anchor = ensureAnchorPair(
+        middleAnchors[index] ??
+          middleAnchors[middleAnchors.length - 1] ??
+          defaultAnchors.depth2[
+            Math.min(index, defaultAnchors.depth2.length - 1)
+          ],
+        defaultAnchors.depth2[0]
+      );
+
+      data.push({
+        src,
+        depth: resolvedIntensity.depth2,
+        size,
+        anchor,
+      });
+    });
+
+    if (resolvedImages.depth1) {
+      data.push({
+        src: resolvedImages.depth1,
+        depth: resolvedIntensity.depth1,
+        size: resolvedSizes.depth1 ?? defaultSizes.depth1,
+        anchor: resolvedAnchors.depth1,
+      });
+    }
+
+    return data;
+  }, [anchors, depthImages, intensity, sizes]);
+
+  const backgroundImage = useMemo(
+    () => layerData.map((layer) => `url(${layer.src})`).join(", "),
+    [layerData]
+  );
+
+  const backgroundSize = useMemo(
+    () => layerData.map((layer) => layer.size || "auto").join(", "),
+    [layerData]
+  );
+
+  const layerDepths = useMemo(
+    () => layerData.map((layer) => layer.depth),
+    [layerData]
+  );
+
+  const layerAnchors = useMemo(
+    () => layerData.map((layer) => layer.anchor),
+    [layerData]
+  );
+
+  const initialPositions = useMemo(
+    () => layerAnchors.map(([x, y]) => `${x}% ${y}%`).join(", "),
+    [layerAnchors]
+  );
 
   useEffect(() => {
+    if (typeof window === "undefined") return undefined;
+
     const container = containerRef.current;
-    if (!container || !layers || layers.length === 0) return;
+    if (!container || !layerData.length) return undefined;
 
-    // If only one layer, render an <img> and move it via transform (better control over size)
-    if (layers.length === 1) {
-      const imgEl = imgRef.current;
-      if (!imgEl) return;
+    container.style.backgroundImage = backgroundImage;
+    container.style.backgroundSize = backgroundSize;
+    container.style.backgroundPosition = initialPositions;
 
-      // no-op placeholders removed
+    const prefersReducedMotion =
+      typeof window.matchMedia === "function" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-      function onMove(e) {
-        const _w = window.innerWidth / 2;
-        const _h = window.innerHeight / 2;
-        const _mouseX = e.clientX;
-        const _mouseY = e.clientY;
+    if (prefersReducedMotion) {
+      return undefined;
+    }
 
-        // use first depthFactor for single image
-        const f = depthFactors[0] || 0.03;
-        const x = -(_mouseX - _w) * f;
-        const y = -(_mouseY - _h) * f;
+    const handleMouseMove = (event) => {
+      coordsRef.current = { x: event.clientX, y: event.clientY };
 
-        stateRef.current.tx = x;
-        stateRef.current.ty = y;
+      if (!rafRef.current) {
+        rafRef.current = window.requestAnimationFrame(() => {
+          rafRef.current = null;
 
-        // rAF loop
-        if (!rafRef.current) {
-          rafRef.current = requestAnimationFrame(() => {
-            const { tx, ty } = stateRef.current;
-            imgEl.style.transform = `translate3d(calc(-50% + ${tx}px), calc(-50% + ${ty}px), 0)`;
-            rafRef.current = null;
+          const { x, y } = coordsRef.current;
+          const centerX = window.innerWidth / 2;
+          const centerY = window.innerHeight / 2;
+
+          const positions = layerDepths.map((factor, index) => {
+            const [baseX, baseY] = layerAnchors[index];
+            const posX = baseX - (x - centerX) * factor;
+            const posY = baseY - (y - centerY) * factor;
+            return `${posX}% ${posY}%`;
           });
-        }
+
+          container.style.backgroundPosition = positions.join(", ");
+        });
       }
+    };
 
-      document.addEventListener("mousemove", onMove);
-      return () => {
-        document.removeEventListener("mousemove", onMove);
-        if (rafRef.current) cancelAnimationFrame(rafRef.current);
-      };
-    }
+    document.addEventListener("mousemove", handleMouseMove);
 
-    // fallback for multiple layers: use background-image approach (existing behavior)
-    const elem = containerRef.current;
-    elem.style.backgroundImage = layers
-      .map((l) => `url(${l})`)
-      .reverse()
-      .join(", ");
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+      if (rafRef.current) {
+        window.cancelAnimationFrame(rafRef.current);
+      }
+    };
+  }, [
+    backgroundImage,
+    backgroundSize,
+    initialPositions,
+    layerAnchors,
+    layerData.length,
+    layerDepths,
+  ]);
 
-    function parallax(e) {
-      const _w = window.innerWidth / 2;
-      const _h = window.innerHeight / 2;
-      const _mouseX = e.clientX;
-      const _mouseY = e.clientY;
-
-      const d = depthFactors;
-      const _depth1 = `${50 - (_mouseX - _w) * (d[0] || 0.01)}% ${
-        50 - (_mouseY - _h) * (d[0] || 0.01)
-      }%`;
-      const _depth2 = `${50 - (_mouseX - _w) * (d[1] || 0.02)}% ${
-        50 - (_mouseY - _h) * (d[1] || 0.02)
-      }%`;
-      const _depth3 = `${50 - (_mouseX - _w) * (d[2] || 0.06)}% ${
-        50 - (_mouseY - _h) * (d[2] || 0.06)
-      }%`;
-
-      const x = `${_depth3}, ${_depth2}, ${_depth1}`;
-      elem.style.backgroundPosition = x;
-    }
-
-    document.addEventListener("mousemove", parallax);
-    return () => document.removeEventListener("mousemove", parallax);
-  }, [layers, depthFactors]);
+  const combinedClassName = className
+    ? `${styles.parallax} ${className}`
+    : styles.parallax;
 
   return (
-    <div ref={containerRef} className={styles.parallax} aria-hidden="true">
-      {layers && layers.length === 1 && (
-        <img
-          ref={imgRef}
-          src={layers[0]}
-          className={styles.parallaxImg}
-          alt=""
-        />
-      )}
-    </div>
+    <div
+      ref={containerRef}
+      className={combinedClassName}
+      aria-hidden="true"
+      style={{
+        backgroundImage,
+        backgroundSize,
+        backgroundPosition: initialPositions,
+      }}
+    />
   );
 };
 
