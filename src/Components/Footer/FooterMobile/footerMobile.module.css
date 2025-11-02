@@ -31,7 +31,7 @@
 
 .title {
   color: var(--branco);
-  font-family: Gokhan;
+  font-family: LughFont, sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;

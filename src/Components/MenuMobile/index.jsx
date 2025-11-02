@@ -29,12 +29,20 @@ export const MenuMobile = () => {
   }, [open]);
 
   const scrollToSection = (id) => {
+    // Fechar o menu primeiro para restaurar o scroll da página, depois rolar
+    // até a seção. Se tentarmos scrollIntoView enquanto o body estiver
+    // overflow: hidden, o scroll pode não ocorrer.
     const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
 
     setOpen(false);
+
+    // dar um pequeno delay para garantir que o overflow foi restaurado
+    // após o fechamento do menu antes de tentar o scroll.
+    if (section) {
+      window.setTimeout(() => {
+        section.scrollIntoView({ behavior: "smooth" });
+      }, 50);
+    }
   };
 
   return (

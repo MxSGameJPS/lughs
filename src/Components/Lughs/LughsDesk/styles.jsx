@@ -56,7 +56,7 @@ export const Title = styled.h2`
   color: var(--branco);
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-family: Gokhan;
+  font-family: 'LughFont', sans-serif;
   font-size: 120px;
   font-style: normal;
   font-weight: 400;

@@ -77,7 +77,7 @@ export const CardNameBox = styled.div`
 h3{
   color: var(--White---Branding-Color, #FFF);
 text-align: center;
-font-family: 'Gokhan', sans-serif;
+font-family: 'LughFont', sans-serif;
 font-size: 64px;
 font-style: normal;
 font-weight: 400;
