@@ -47,6 +47,7 @@ export const Badges = styled.div`
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    letter-spacing: 4.4px;
   }
 `;
 
