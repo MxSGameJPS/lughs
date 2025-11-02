@@ -119,7 +119,7 @@ export const CardInfoBox = styled.div`
     text-align: right;
     font-size: 20px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 400;
     line-height: normal;
   }
 `
@@ -163,7 +163,7 @@ export const PrismaticBtn = styled.div`
   text-align: center;
   font-size: 20px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   line-height: normal;
   
   position: absolute;

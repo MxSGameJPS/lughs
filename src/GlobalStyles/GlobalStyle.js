@@ -1,6 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 
-
 export const GlobalStyle = createGlobalStyle`
 
  :root {
@@ -25,7 +24,7 @@ export const GlobalStyle = createGlobalStyle`
     font-display: swap;
   }
 
-  /* LughFont — arquivo em public/fonts (novo) */
+
   
 
   /* ======= RESET CSS ======= */
@@ -41,9 +40,13 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
-  }
+    p {
+      font-family: 'Sora', 'LughFont', sans-serif;
+    }
 
-  body {
+    button {
+      font-family: 'Gokhan', 'LughFont', 'Sora', sans-serif;
+    }
     line-height: 1.5;
     background-color: #fff;
     color: #000;
@@ -81,4 +84,3 @@ export const GlobalStyle = createGlobalStyle`
     border-spacing: 0;
   }
 `;
-
