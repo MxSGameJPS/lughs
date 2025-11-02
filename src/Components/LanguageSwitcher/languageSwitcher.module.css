@@ -21,7 +21,31 @@
 }
 
 .avatarSmall {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   margin-right: 8px;
+  z-index: 1;
+}
+
+.root {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown {
+  position: absolute;
+  left: 0;
+  top: 40px;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 4px;
+}
+
+.dropdownItem {
+  background: transparent;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
 }

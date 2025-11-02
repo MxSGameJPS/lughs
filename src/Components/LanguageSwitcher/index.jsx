@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { IconButton, Menu, MenuItem, Avatar } from "@mui/material";
+import { IconButton, Avatar } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import styles from "./languageSwitcher.module.css";
 
@@ -9,8 +9,7 @@ import es from "../../Assets/espanha.png";
 
 export default function LanguageSwitcher() {
   const { i18n } = useTranslation();
-  const [anchorEl, setAnchorEl] = useState(null);
-  const open = Boolean(anchorEl);
+  const [openInline, setOpenInline] = useState(false);
 
   const current = i18n.resolvedLanguage || i18n.language || "pt";
 
@@ -20,12 +19,13 @@ export default function LanguageSwitcher() {
     es,
   };
 
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
+  const handleClick = () => {
+    // toggle inline dropdown
+    setOpenInline((s) => !s);
   };
 
   const handleClose = (lang) => {
-    setAnchorEl(null);
+    setOpenInline(false);
     if (lang) {
       i18n.changeLanguage(lang);
     }
@@ -33,33 +33,38 @@ export default function LanguageSwitcher() {
 
   return (
     <>
-      <IconButton onClick={handleClick} className={styles.iconButton}>
-        <Avatar
-          src={flagByLang[current]}
-          alt={current.toUpperCase()}
-          className={styles.avatar}
-        />
-      </IconButton>
+      <div className={styles.root}>
+        <IconButton onClick={handleClick} className={styles.iconButton}>
+          <Avatar
+            src={flagByLang[current]}
+            alt={current.toUpperCase()}
+            className={styles.avatar}
+          />
+        </IconButton>
 
-      <Menu
-        anchorEl={anchorEl}
-        open={open}
-        onClose={() => handleClose(null)}
-        PaperProps={{
-          sx: { backgroundColor: "transparent", boxShadow: "none" },
-        }}
-        MenuListProps={{ sx: { backgroundColor: "transparent" } }}
-      >
-        <MenuItem onClick={() => handleClose("pt")}>
-          <Avatar src={pt} className={styles.avatarSmall} />
-        </MenuItem>
-        <MenuItem onClick={() => handleClose("en")}>
-          <Avatar src={en} className={styles.avatarSmall} />
-        </MenuItem>
-        <MenuItem onClick={() => handleClose("es")}>
-          <Avatar src={es} className={styles.avatarSmall} />
-        </MenuItem>
-      </Menu>
+        {openInline && (
+          <div className={styles.dropdown} role="menu">
+            <button
+              className={styles.dropdownItem}
+              onClick={() => handleClose("pt")}
+            >
+              <Avatar src={pt} className={styles.avatarSmall} />
+            </button>
+            <button
+              className={styles.dropdownItem}
+              onClick={() => handleClose("en")}
+            >
+              <Avatar src={en} className={styles.avatarSmall} />
+            </button>
+            <button
+              className={styles.dropdownItem}
+              onClick={() => handleClose("es")}
+            >
+              <Avatar src={es} className={styles.avatarSmall} />
+            </button>
+          </div>
+        )}
+      </div>
     </>
   );
 }
