@@ -72,6 +72,7 @@ export const PrismaticBtn = styled.div`
   align-items: center;
   gap: 20px;
   flex-shrink: 0;
+  font-family: 'Sora', sans-serif;
 
   border-radius: 14px;
   border: 2px solid transparent; /* espaço da borda */

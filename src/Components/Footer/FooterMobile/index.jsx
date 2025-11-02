@@ -53,7 +53,7 @@ export const FooterMobile = () => {
           <button className={styles.iconButton}
            onClick={() =>
               window.open(
-                "https://discord.gg/hXtfpeYm",
+                "https://discord.gg/lugh-world-911302214998446111",
                 "_blank",
                 "noopener,noreferrer"
               )

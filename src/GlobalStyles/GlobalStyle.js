@@ -45,7 +45,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     button {
-      font-family: 'Gokhan', 'LughFont', 'Sora', sans-serif;
+      font-family: 'Sora', sans-serif;
     }
     line-height: 1.5;
     background-color: #fff;
