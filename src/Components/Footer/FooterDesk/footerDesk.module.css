@@ -180,6 +180,7 @@
   font-style: normal;
   font-weight: 700;
   line-height: 20px;
+  font-family: Sora, sans-serif;
 }
 
 .copyBar {
@@ -189,6 +190,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: 16px;
+  font-family: Sora, sans-serif;
 }
 
 .logosRow {
