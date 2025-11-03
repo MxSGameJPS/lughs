@@ -190,8 +190,7 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  letter-spacing: 1.4px;
-font-family: Sora, sans-serif;
+  font-family: Sora, sans-serif;
 }
 
 @media (min-width: 1200px) {
@@ -307,7 +306,7 @@ font-family: Sora, sans-serif;
   color: var(--branco);
 }
 
-.cardDiscordText h1  {
+.cardDiscordText h1 {
   text-align: center;
   font-family: LughFont, sans-serif;
   font-size: 20px;
