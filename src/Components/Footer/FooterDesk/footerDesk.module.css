@@ -35,8 +35,12 @@
   align-items: center;
   gap: 40px;
   color: var(--branco);
-  margin-top: -150px;
+  margin-top: -180px;
   width: fit-content;
+  position: relative;
+  cursor: pointer;
+  z-index: 99999; /* bring text & button above the decorative image so it can be clicked */
+  pointer-events: auto;
 }
 
 .cardDiscordText h1 {
@@ -47,9 +51,10 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  letter-spacing: 2px;
+  position: relative;
+  z-index: 20; /* bring text & button above the decorative image and lower section so it can be clicked */
+  pointer-events: auto;
 }
-
 .cardDiscordText p {
   color: #fff;
   text-align: center;
@@ -76,6 +81,42 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  cursor: pointer;
+  pointer-events: auto;
+  position: relative;
+  z-index: 100000;
+}
+
+/* anchor version of the discord button (converted from <button>) */
+.discordLink {
+  display: flex;
+  width: 356px;
+  height: 72px;
+  padding: 40px;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  border-radius: 20px;
+  border: 2px solid #fff;
+  color: #fff;
+  text-align: right;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  cursor: pointer;
+  pointer-events: auto;
+  position: relative;
+  z-index: 100000;
+  text-decoration: none;
+  font-family: Sora, "sans-serif";
+}
+
+/* ensure the decorative image doesn't intercept pointer events when overlapping */
+.upper img {
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .lower {
@@ -113,7 +154,6 @@
 
   @media (min-width: 2300px) {
     margin-top: 150px;
-
   }
 }
 
@@ -132,7 +172,6 @@
 
 .logoAzul {
   width: 180px;
-  
 }
 
 .title {
@@ -151,6 +190,13 @@
 }
 
 .iconButton {
+  background: transparent;
+  border: none;
+  padding: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .wishBtn {

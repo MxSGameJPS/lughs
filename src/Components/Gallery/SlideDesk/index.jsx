@@ -27,6 +27,8 @@ export const SlideDesk = ({ slides }) => {
   // because we added one cloned slide at the beginning, shift initial by +1
   const initialSlideIndex = count > 1 ? initial + 1 : initial;
   const [active, setActive] = useState(initial);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalSlide, setModalSlide] = useState(null);
 
   // autoplay manual helpers (placed after count so we can use it)
   const startManualAutoplay = () => {
@@ -241,8 +243,28 @@ export const SlideDesk = ({ slides }) => {
           style={{ paddingBottom: 32 }}
         >
           {extendedSlides.map((s, i) => (
-            <SwiperSlide key={`ext-${i}-${s.img}`} className="slide">
-              <video src={s.img} alt={s.title || `slide-${i}`} autoPlay loop muted />
+            <SwiperSlide
+              key={`ext-${i}-${s.img}`}
+              className="slide"
+              onClick={() => {
+                try {
+                  // open modal with slide data and pause autoplay
+                  stopManualAutoplay();
+                  setModalSlide(s);
+                  setModalOpen(true);
+                } catch (e) {}
+              }}
+            >
+              <div className={styles.cardButton} role="button" tabIndex={0}>
+                <video
+                  src={s.img}
+                  alt={s.title || `slide-${i}`}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                />
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>
@@ -253,6 +275,55 @@ export const SlideDesk = ({ slides }) => {
           <p className={styles.captionText}>{slides[active]?.text}</p>
         </figcaption>
       </div>
+
+      {/* Fullscreen modal overlay for clicked slide */}
+      {modalOpen && modalSlide && (
+        <div
+          className={styles.modal}
+          role="dialog"
+          aria-modal="true"
+          onClick={() => {
+            try {
+              setModalOpen(false);
+              setModalSlide(null);
+              // restart autoplay when modal closes
+              startManualAutoplay();
+            } catch (e) {}
+          }}
+        >
+          <div
+            className={styles.modalContent}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className={styles.modalClose}
+              aria-label="Fechar"
+              onClick={() => {
+                try {
+                  setModalOpen(false);
+                  setModalSlide(null);
+                  startManualAutoplay();
+                } catch (e) {}
+              }}
+            >
+              ×
+            </button>
+
+            <video
+              className={styles.modalVideo}
+              src={modalSlide.img}
+              controls
+              autoPlay
+              playsInline
+            />
+
+            <div className={styles.modalCaption}>
+              <h3 className={styles.captionTitle}>{modalSlide.title}</h3>
+              <p className={styles.captionText}>{modalSlide.text}</p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

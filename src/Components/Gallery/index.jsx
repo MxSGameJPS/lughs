@@ -76,9 +76,9 @@ export const Gallery = () => {
       <SlideMobile slides={slides} />
       <SlideDesk slides={slides} />
       <WishBtn />
-      <div style={{ position: "absolute", bottom: "80px" }}>
+      {/* <div style={{ position: "absolute", bottom: "80px" }}>
         <DownBtn destination="video" />
-      </div>
+      </div> */}
     </section>
   );
 };

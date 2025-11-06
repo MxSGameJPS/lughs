@@ -22,18 +22,15 @@ export const FooterDesk = () => {
           <h1>{t("cardBruno.title")}</h1>
           <p>{t("cardBruno.text")}</p>
 
-          <button
-            onClick={() =>
-              window.open(
-                "https://discord.com/invite/QvG8d3TEXz",
-                "_blank",
-                "noopener,noreferrer"
-              )
-            }
+          <a
+            className={styles.discordLink}
+            href="https://discord.gg/lugh-world-911302214998446111"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <FaDiscord size={39} />
             {t("cardBruno.btnText")}
-          </button>
+          </a>
         </div>
 
         <img src={bruno} alt="" />
@@ -44,45 +41,58 @@ export const FooterDesk = () => {
           <div className={styles.lowerContent}>
             <img className={styles.logoAzul} src={logoAzul} alt="logoAzul" />
 
-            <button className={styles.wishBtn}>
+            <button
+              className={styles.wishBtn}
+              type="button"
+              onClick={() =>
+                window.open(
+                  "https://store.steampowered.com/app/3234720/Lugh_World/",
+                  "_blank",
+                  "noopener,noreferrer"
+                )
+              }
+            >
               <img src={iconBtn} alt="" />
               {t("buttons.wishlist")}
             </button>
 
             <div className={styles.socialRow}>
               <h2 className={styles.title}>{t("footer.socials")}</h2>
-              <button className={styles.iconButton}
-              onClick={() =>
-              window.open(
-                "https://www.instagram.com/lughworld/",
-                "_blank",
-                "noopener,noreferrer"
-              )
-            }
+              <button
+                className={styles.iconButton}
+                onClick={() =>
+                  window.open(
+                    "https://www.instagram.com/lughworld/",
+                    "_blank",
+                    "noopener,noreferrer"
+                  )
+                }
               >
                 <img src={instagram} alt="instagram" />
               </button>
 
-              <button className={styles.iconButton}
-              onClick={() =>
-              window.open(
-                "https://www.youtube.com/@LughWorld/featured",
-                "_blank",
-                "noopener,noreferrer"
-              )
-            }
+              <button
+                className={styles.iconButton}
+                onClick={() =>
+                  window.open(
+                    "https://www.youtube.com/@LughWorld/featured",
+                    "_blank",
+                    "noopener,noreferrer"
+                  )
+                }
               >
                 <img src={youtube} alt="instagram" />
               </button>
 
-              <button className={styles.iconButton}
-              onClick={() =>
-              window.open(
-                "https://discord.gg/lugh-world-911302214998446111",
-                "_blank",
-                "noopener,noreferrer"
-              )
-            }
+              <button
+                className={styles.iconButton}
+                onClick={() =>
+                  window.open(
+                    "https://discord.gg/lugh-world-911302214998446111",
+                    "_blank",
+                    "noopener,noreferrer"
+                  )
+                }
               >
                 <img src={discord} alt="instagram" />
               </button>

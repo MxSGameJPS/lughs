@@ -115,3 +115,67 @@
   outline: 2px solid #36a1ff;
   outline-offset: 4px;
 }
+
+/* make slide clickable area accessible */
+.cardButton {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.cardButton video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Modal / fullscreen overlay */
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 24px;
+}
+.modalContent {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  max-height: 94vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.modalClose {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  background: transparent;
+  color: #fff;
+  border: none;
+  font-size: 36px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 6px 10px;
+}
+.modalVideo {
+  width: 100%;
+  max-height: 80vh;
+  background: #000;
+  border-radius: 8px;
+}
+.modalCaption {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
