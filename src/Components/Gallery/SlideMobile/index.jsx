@@ -48,7 +48,13 @@ export const SlideMobile = ({ slides }) => {
   return (
     <div className={styles.wrap}>
       <div className={styles.main}>
-        <img src={current.img} alt={current.title || `slide-${idx}`} />
+        <video
+          src={current.img}
+          alt={current.title || `slide-${idx}`}
+          autoPlay
+          loop
+          muted
+        />
         <button className="nav prev" onClick={prev} aria-label="Anterior">
           <MdArrowBackIosNew size={36} />
         </button>
@@ -76,7 +82,15 @@ export const SlideMobile = ({ slides }) => {
             }}
             aria-label={`Ir para slide ${i + 1}`}
           >
-            <img src={s.img} alt={`thumb-${i}`} />
+            <video
+              src={s.img}
+              alt={`thumb-${i}`}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+            />
           </button>
         ))}
       </div>

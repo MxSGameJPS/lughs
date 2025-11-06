@@ -31,6 +31,7 @@
 .textbox {
   color: var(--bg-navy);
   display: flex;
+  align-items: flex-start;
   flex-direction: column;
   gap: 24px;
   width: 80%;
@@ -138,23 +139,23 @@
     position: absolute;
     /* valores ajustados para melhor encaixe dentro da moldura do monitor */
     top: 11%;
-    left: 12%;
-    width: 70%;
-    height: 68%;
+    left: 8%;
+    width: 81%;
+    height: 80%;
 
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 6px;
 
     /* clip-path adaptado para recortar o vídeo exatamente na área do monitor */
     clip-path: polygon(
-      7% 3%,
-      /* canto superior esquerdo */ 88% 19%,
-      /* superior direito */ 94% 84%,
-      /* inferior direito */ 9% 88% /* inferior esquerdo */
+      4% 8%,
+      /* canto superior esquerdo */ 100% 8%,
+      /* superior direito */ 100% 92%,
+      /* inferior direito */ 4% 92%
     );
 
     /* pequena rotação e skew para coincidir com a perspectiva da moldura */
-    transform: rotate(-1deg) skewX(0deg);
+    transform: rotate(0deg) skewX(0deg);
     transform-origin: center;
 
     will-change: transform, clip-path;
