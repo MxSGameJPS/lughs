@@ -242,7 +242,7 @@ export const SlideDesk = ({ slides }) => {
         >
           {extendedSlides.map((s, i) => (
             <SwiperSlide key={`ext-${i}-${s.img}`} className="slide">
-              <img src={s.img} alt={s.title || `slide-${i}`} />
+              <video src={s.img} alt={s.title || `slide-${i}`} autoPlay loop muted />
             </SwiperSlide>
           ))}
         </Swiper>

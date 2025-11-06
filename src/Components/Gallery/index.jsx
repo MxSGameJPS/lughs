@@ -3,11 +3,17 @@ import { DownBtn } from "../DownBtn";
 import { SlideDesk } from "./SlideDesk";
 import { SlideMobile } from "./SlideMobile";
 import { useTranslation } from "react-i18next";
-import img1 from "../../Assets/gallery_1.png";
-import img2 from "../../Assets/gallery_2.png";
-import img3 from "../../Assets/gallery_3.png";
-import img4 from "../../Assets/gallery_4.png";
-import img5 from "../../Assets/gallery_5.png";
+import vid1 from "../../Assets/videos/Gifs_batalha PvP.mp4";
+import vid2 from "../../Assets/videos/Gifs_card e scan.mp4";
+import vid3 from "../../Assets/videos/Gifs_corrida biomas02.mp4";
+import vid4 from "../../Assets/videos/Gifs_evolucao tripla.mp4";
+import vid5 from "../../Assets/videos/Gifs_inventario.mp4";
+import vid6 from "../../Assets/videos/Gifs_lughpad01.mp4";
+import vid7 from "../../Assets/videos/Gifs_montaria 3 tipos.mp4";
+import vid8 from "../../Assets/videos/Gifs_paraglider em miranda.mp4";
+import vid9 from "../../Assets/videos/Gifs_variantes Onthera.mp4";
+
+
 import styles from "./gallery.module.css";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -19,27 +25,27 @@ export const Gallery = () => {
     {
       title: t("gallery.carousel.carousel1.title"),
       text: t("gallery.carousel.carousel1.text"),
-      img: img1,
+      img: vid1,
     },
     {
       title: t("gallery.carousel.carousel2.title"),
       text: t("gallery.carousel.carousel2.text"),
-      img: img2,
+      img: vid2,
     },
     {
       title: t("gallery.carousel.carousel3.title"),
       text: t("gallery.carousel.carousel3.text"),
-      img: img3,
+      img: vid3,
     },
     {
       title: t("gallery.carousel.carousel4.title"),
       text: t("gallery.carousel.carousel4.text"),
-      img: img4,
+      img: vid4,
     },
     {
       title: t("gallery.carousel.carousel5.title"),
       text: t("gallery.carousel.carousel5.text"),
-      img: img5,
+      img: vid5,
     },
   ];
 
