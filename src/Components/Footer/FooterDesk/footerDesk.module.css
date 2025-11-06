@@ -1,5 +1,5 @@
 .wrapper {
-  height: 1062px;
+  height: 100vh;
   position: relative;
   display: none;
 }
@@ -97,7 +97,7 @@
 
 @media (min-width: 768px) {
   .lower {
-    padding: 148px 156px;
+    padding: 78px 156px 148px 156px;
   }
 }
 
