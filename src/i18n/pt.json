@@ -49,12 +49,12 @@
     "title": "UM MUNDO A SER EXPLORADO!",
     "carousel": {
       "carousel1": {
-        "title": "Seu melhor amigo!",
-        "text": "Sempre que seu Lugh estiver fora do cristal ele irá te acompanhar!"
+        "title": "Variações de Onthera",
+        "text": "Nossa amiguinha Onthera possui diversas variações de cores! Cada uma com habilidades e personalidades únicas!"
       },
       "carousel2": {
-        "title": "Natação",
-        "text": "Nade pelas praias de Lugh World! Explore os mares e descubra ilhas secretas!"
+        "title": "Montarias",
+        "text": "Utilize seus Lugh's como montarias para explorar o vasto mundo de Lugh World!"
       },
       "carousel3": {
         "title": "Customização",
@@ -67,6 +67,22 @@
       "carousel5": {
         "title": "Evolução",
         "text": "A cada evolução ele se torna mais forte e com habilidades ainda melhores"
+      },
+      "carousel6": {
+        "title": "Card e Scans",
+        "text": "Colete cards e scans dos Lugh's que você encontrar em suas aventuras!"
+      },
+      "carousel7": {
+        "title": "Corrida Biomas",
+        "text": "Corra pelos diversos biomas de Lugh World, cada um com suas características únicas!"
+      },
+      "carousel8": {
+        "title": "LughPad",
+        "text": "Use o LughPad para gerenciar seus Lugh's, itens e muito mais!"
+      },
+      "carousel9": {
+        "title": "Paraglider em Miranda",
+        "text": "Use o Paraglider para explorar os céus de Lugh World e alcançar lugares inacessíveis!"
       }
     }
   },

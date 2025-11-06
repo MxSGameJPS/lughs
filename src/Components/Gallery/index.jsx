@@ -25,27 +25,47 @@ export const Gallery = () => {
     {
       title: t("gallery.carousel.carousel1.title"),
       text: t("gallery.carousel.carousel1.text"),
-      img: vid1,
+      img: vid9,
     },
     {
       title: t("gallery.carousel.carousel2.title"),
       text: t("gallery.carousel.carousel2.text"),
-      img: vid2,
+      img: vid7,
     },
     {
       title: t("gallery.carousel.carousel3.title"),
       text: t("gallery.carousel.carousel3.text"),
-      img: vid3,
+      img: vid5,
     },
     {
       title: t("gallery.carousel.carousel4.title"),
       text: t("gallery.carousel.carousel4.text"),
-      img: vid4,
+      img: vid1,
     },
     {
       title: t("gallery.carousel.carousel5.title"),
       text: t("gallery.carousel.carousel5.text"),
-      img: vid5,
+      img: vid4,
+    },
+    {
+      title: t("gallery.carousel.carousel6.title"),
+      text: t("gallery.carousel.carousel6.text"),
+      img: vid2,
+    },
+    {
+      title: t("gallery.carousel.carousel7.title"),
+      text: t("gallery.carousel.carousel7.text"),
+      img: vid3,
+    },
+    {
+      title: t("gallery.carousel.carousel8.title"),
+      text: t("gallery.carousel.carousel8.text"),
+      img: vid6,
+    },
+    {
+      title: t("gallery.carousel.carousel9.title"),
+      text: t("gallery.carousel.carousel9.text"),
+      img: vid8,
     },
   ];
 
