@@ -147,14 +147,14 @@
 
     /* clip-path adaptado para recortar o vídeo exatamente na área do monitor */
     clip-path: polygon(
-      7% 5%,
-      /* canto superior esquerdo */ 88% 17%,
-      /* superior direito */ 94% 83%,
-      /* inferior direito */ 10% 88% /* inferior esquerdo */
+      7% 3%,
+      /* canto superior esquerdo */ 88% 19%,
+      /* superior direito */ 94% 84%,
+      /* inferior direito */ 9% 88% /* inferior esquerdo */
     );
 
     /* pequena rotação e skew para coincidir com a perspectiva da moldura */
-    transform: rotate(0deg) skewX(1deg);
+    transform: rotate(-1deg) skewX(0deg);
     transform-origin: center;
 
     will-change: transform, clip-path;
