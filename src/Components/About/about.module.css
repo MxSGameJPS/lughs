@@ -149,12 +149,12 @@
     clip-path: polygon(
       7% 5%,
       /* canto superior esquerdo */ 88% 17%,
-      /* superior direito */ 94% 82%,
+      /* superior direito */ 94% 83%,
       /* inferior direito */ 10% 88% /* inferior esquerdo */
     );
 
     /* pequena rotação e skew para coincidir com a perspectiva da moldura */
-    transform: rotate(1deg) skewX(1deg);
+    transform: rotate(0deg) skewX(1deg);
     transform-origin: center;
 
     will-change: transform, clip-path;

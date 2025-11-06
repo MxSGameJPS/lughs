@@ -50,6 +50,24 @@ export const Lughs = () => {
 
   const lughs = [
     {
+      name: "ONTHERA",
+      number: "#007",
+      type: "Fire",
+      typeIcon: iconFire,
+      stars: prismaticById.ONTHERA ? estrelas : estrelasAnky,
+      text: t("lughs.onthera.text"),
+      subText: t("lughs.onthera.subText"),
+      image: prismaticById.ONTHERA ? ontheraPrismatic : onthera,
+      prismatic: prismaticById.ONTHERA,
+      buttonRegular: t("buttons.regular"),
+      buttonPrismatic: t("buttons.prismatic"),
+      btn: btnOnthera,
+      // >>> aqui estava usando ["ANKY"] por engano
+      btnSelection: prismaticById.ONTHERA
+        ? btnOntheraPrismaticSelection
+        : btnOntheraSelection,
+    },
+    {
       name: "ANKY",
       number: "#004",
       type: "Grass",
@@ -104,25 +122,7 @@ export const Lughs = () => {
       btnSelection: prismaticById.CHORIBLOB
         ? btnChoriblobPrismaticSelection
         : btnChoriblobSelection,
-    },
-    {
-      name: "ONTHERA",
-      number: "#007",
-      type: "Fire",
-      typeIcon: iconFire,
-      stars: prismaticById.ONTHERA ? estrelas : estrelasAnky,
-      text: t("lughs.onthera.text"),
-      subText: t("lughs.onthera.subText"),
-      image: prismaticById.ONTHERA ? ontheraPrismatic : onthera,
-      prismatic: prismaticById.ONTHERA,
-      buttonRegular: t("buttons.regular"),
-      buttonPrismatic: t("buttons.prismatic"),
-      btn: btnOnthera,
-      // >>> aqui estava usando ["ANKY"] por engano
-      btnSelection: prismaticById.ONTHERA
-        ? btnOntheraPrismaticSelection
-        : btnOntheraSelection,
-    },
+    },    
   ];
 
   const handlePrismatic = (name) => {
