@@ -290,6 +290,12 @@
   top: -65px;
   left: 60%;
   transform: translateX(-50%);
+
+  @media (max-width: 768px) {
+    min-width: 300px;
+    left: 55%;
+    top: -85px;
+  }
 }
 
 .cardDiscordText {
@@ -304,6 +310,10 @@
   position: relative;
   z-index: 10;
   color: var(--branco);
+
+  @media (max-width: 768px) {
+    padding: 20px 0;
+  }
 }
 
 .cardDiscordText h1 {
@@ -313,6 +323,10 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
 }
 
 .cardDiscordText p {

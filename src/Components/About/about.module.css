@@ -14,8 +14,6 @@
   gap: 24px;
 }
 
-
-
 @media (min-width: 768px) {
   .wrapper {
     flex-direction: row-reverse;
@@ -128,7 +126,7 @@
   /* width: clamp(320px, 45vw, 820px); */
   width: 80%;
   max-width: 800px;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 15 / 10;
 }
 
 .screenVideo {
@@ -138,25 +136,29 @@
 @media (min-width: 768px) {
   .screenVideo {
     position: absolute;
-    top: 15%;
-    left: 9%;
-    width: 74%;
-    height: 62%;
+    /* valores ajustados para melhor encaixe dentro da moldura do monitor */
+    top: 11%;
+    left: 12%;
+    width: 70%;
+    height: 68%;
 
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 6px;
 
+    /* clip-path adaptado para recortar o vídeo exatamente na área do monitor */
     clip-path: polygon(
-      11% 0%,
-      /* canto superior esquerdo */ 83% 13%,
-      /* superior direito */ 93% 86%,
-      /* inferior direito */ 18% 90% /* inferior esquerdo */
+      7% 5%,
+      /* canto superior esquerdo */ 88% 17%,
+      /* superior direito */ 94% 82%,
+      /* inferior direito */ 10% 88% /* inferior esquerdo */
     );
 
-    transform: skewX(-6deg) rotate(1deg);
+    /* pequena rotação e skew para coincidir com a perspectiva da moldura */
+    transform: rotate(1deg) skewX(1deg);
     transform-origin: center;
 
     will-change: transform, clip-path;
+    z-index: 1;
   }
 }
 
@@ -167,12 +169,15 @@
 @media (min-width: 768px) {
   .frame {
     position: absolute;
-    inset: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: contain;
     pointer-events: none;
-    z-index: 2;
+    z-index: 3;
     display: block;
   }
 }

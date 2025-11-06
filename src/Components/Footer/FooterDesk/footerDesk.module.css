@@ -17,7 +17,7 @@
   background-size: cover;
   display: flex;
   position: relative;
-  height: 651px;
+  height: 551px;
   justify-content: center;
   align-items: center;
   padding: 40px 0;
@@ -25,8 +25,8 @@
 
 .upper img {
   margin-right: -100px;
-  margin-top: 50px;
-  width: 610px;
+  margin-bottom: 200px;
+  width: 710px;
 }
 
 .cardDiscordText {
