@@ -50,11 +50,17 @@ export const MenuMobile = () => {
       <img src={logo} alt={t("menu.alt")} />
 
       <div className={styles.rightBox}>
+        <a
+        href="https://store.steampowered.com/app/3234720/Lugh_World/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <button className={styles.wishBtn}>
           <img src={iconBtn} alt="" />
           {t("buttons.wishlist")}
           <MdOutlineKeyboardArrowRight />
         </button>
+      </a>
         <button onClick={() => setOpen(!open)}>
           <TiThMenu size={24} />
         </button>

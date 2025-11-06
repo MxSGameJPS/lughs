@@ -51,6 +51,7 @@
   border: 2px solid var(--branco);
   color: #fff;
   background-color: var(--bg-wish-btn);
+  font-family: "Sora", sans-serif;
 }
 
 .wishBtn:hover {

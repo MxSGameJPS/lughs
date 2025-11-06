@@ -10,11 +10,18 @@ import anky from "../../Assets/Anky.png";
 import ankyPrismatic from "../../Assets/Anky_prismatico.png";
 import araupi from "../../Assets/araupi.png";
 import araupiPrismatic from "../../Assets/araupi_prismatico.png";
+import choriblob from "../../Assets/ChoriblobRegular.PNG";
+import choriblobPrismatic from "../../Assets/ChoriblobPrism.PNG";
+import onthera from "../../Assets/OntheraRegular.PNG";
+import ontheraPrismatic from "../../Assets/onthera_prismatico.PNG";
 
 import estrelasAnky from "../../Assets/estrelas_anky.png";
 import estrelasAraupi from "../../Assets/estrelas_araupi.png";
+import estrelas from "../../Assets/5estrelas.png";
 import iconGrass from "../../Assets/icon_grass.png";
 import iconVoador from "../../Assets/icon_voador.png";
+import iconFire from "../../Assets/icon_fire.png";
+import iconWhater from "../../Assets/icon_whater.png";
 
 import btnAnky from "../../Assets/btn_anky.png";
 import btnAnkySelection from "../../Assets/btn_anky_selecionado.png";
@@ -22,12 +29,20 @@ import btnAnkyPrismaticSelection from "../../Assets/btn_anky_prismatico_selecion
 import btnAraupi from "../../Assets/btn_araupi.png";
 import btnAraupiSelection from "../../Assets/btn_araupi_selecionado.png";
 import btnAraupiPrismaticSelection from "../../Assets/btn_araupi_prismatico_selecionado.png";
+import btnChoriblob from "../../Assets/btn_choriblob.png";
+import btnChoriblobSelection from "../../Assets/btn_choriblob_selecionado.png";
+import btnChoriblobPrismaticSelection from "../../Assets/btn_choriblob_prismatico_selecionado.png";
+import btnOnthera from "../../Assets/btn_onthera.png";
+import btnOntheraSelection from "../../Assets/btn_onthera_selecionado.png";
+import btnOntheraPrismaticSelection from "../../Assets/btn_onthera_prismatico_selecionado.png";
 import { DownBtn } from "../DownBtn";
 
 export const Lughs = () => {
   const [prismaticById, setPrismaticById] = useState({
     ANKY: false,
     ARAUPI: false,
+    CHORIBLOB: false,
+    ONTHERA: false,
   });
 
   const [prismaticBg, setPrismaticBg] = useState(false);
@@ -39,7 +54,8 @@ export const Lughs = () => {
       number: "#004",
       type: "Grass",
       typeIcon: iconGrass,
-      stars: estrelasAnky,
+      // mostra as estrelas prismáticas quando a versão prismática estiver ativada
+      stars: prismaticById.ANKY ? estrelas : estrelasAnky,
       text: t("lughs.anky.text"),
       subText: t("lughs.anky.subText"),
       image: prismaticById.ANKY ? ankyPrismatic : anky,
@@ -56,7 +72,7 @@ export const Lughs = () => {
       number: "#016",
       type: "Voador",
       typeIcon: iconVoador,
-      stars: estrelasAraupi,
+      stars: prismaticById.ARAUPI ? estrelasAnky : estrelasAraupi,
       text: t("lughs.araupi.text"),
       subText: t("lughs.araupi.subText"),
       image: prismaticById.ARAUPI ? araupiPrismatic : araupi,
@@ -68,6 +84,44 @@ export const Lughs = () => {
       btnSelection: prismaticById.ARAUPI
         ? btnAraupiPrismaticSelection
         : btnAraupiSelection,
+    },
+    {
+      name: "CHORIBLOB",
+      number: "#001",
+      type: "Whater",
+      typeIcon: iconWhater,
+      // CHORIBLOB usa `estrelas` quando prismático, caso contrário mantém a imagem regular
+      stars: prismaticById.CHORIBLOB ? estrelas : estrelasAnky,
+      text: t("lughs.choriblob.text"),
+      subText: t("lughs.choriblob.subText"),
+      image: prismaticById.CHORIBLOB ? choriblobPrismatic : choriblob,
+      prismatic: prismaticById.CHORIBLOB,
+      starsPrismatic: estrelas,
+      buttonRegular: t("buttons.regular"),
+      buttonPrismatic: t("buttons.prismatic"),
+      btn: btnChoriblob,
+      // >>> aqui estava usando ["ANKY"] por engano
+      btnSelection: prismaticById.CHORIBLOB
+        ? btnChoriblobPrismaticSelection
+        : btnChoriblobSelection,
+    },
+    {
+      name: "ONTHERA",
+      number: "#007",
+      type: "Fire",
+      typeIcon: iconFire,
+      stars: prismaticById.ONTHERA ? estrelas : estrelasAnky,
+      text: t("lughs.onthera.text"),
+      subText: t("lughs.onthera.subText"),
+      image: prismaticById.ONTHERA ? ontheraPrismatic : onthera,
+      prismatic: prismaticById.ONTHERA,
+      buttonRegular: t("buttons.regular"),
+      buttonPrismatic: t("buttons.prismatic"),
+      btn: btnOnthera,
+      // >>> aqui estava usando ["ANKY"] por engano
+      btnSelection: prismaticById.ONTHERA
+        ? btnOntheraPrismaticSelection
+        : btnOntheraSelection,
     },
   ];
 

@@ -23,14 +23,26 @@
     "anky": {
       "buttonRegular": "Regular",
       "buttonPrismatic": "Ver Versão Prismática",
-      "text": "A margarida em sua testa é usada para absorver a energia solar, fazendo assim, se locomoverem mais rápido. Ankyloseeds aprendem também a disparar a energia armazenada em forma de ataque, atingindo distâncias consideráveis!Ao nascerem, permanecem próximos ao ninho até evoluírem.",
-      "subText": "Curiosidade: Tome muito cuidado pois os pais de Ankylosseds são extremamente territoriais e nunca deixam o ninho desprotegido."
+      "text": "Dizem que os Ankis são pesados, lentos e resistentes, porque carregam consigo a essência do elemento terra. Devido à essa natureza, o território de uma família de Ankis costuma desenvolver um belo jardim, com flores coloridas. Uma característica interessante dos Ankis são as flores que nascem em suas testas, normalmente margaridas. Essas flores absorvem energia solar, que é liberada durante “surtos de energia” dos Ankis, onde eles saem correndo ou realizam grandes feitos de força.",
+      "subText": "Ankis são territoriais e familiares, se organizando sempre em pequenos grupos. E caso você encontre um pequeno Anki brincando num jardim, saiba que os Ankis maiores já estão te observando há muito tempo"
     },
     "araupi": {
       "buttonRegular": "Regular",
       "buttonPrismatic": "Ver Versão Prismática",
       "text": "Araupis são Lugh's extremamente chamativos pelas suas cores. Apesar de seu porte pequeno, possuem um bico forte capaz de cortar troncos de árvores e partir rochas.",
       "subText": "Nesse estágio da vida, estão aprendendo a voar, por isso passam a maior parte do tempo no solo mas, sempre que podem, batem as asas para alcançar galhos mais altos, o que as fazem serem Lugh's fofos, porém desajeitados"
+    },
+    "choriblob": {
+      "buttonRegular": "Regular",
+      "buttonPrismatic": "Ver Versão Prismática",
+      "text": "As Choriblobs são Lugh's dóceis que vivem em bandos nas margens de rios e áreas úmidas. Por serem ligadas ao elemento água, Choriblobs possuem a habilidade especial criar uma espécie de “nuvem-cachecol” ao redor de seu corpo. Esta nuvem especial tem como função regular a temperatura corporal e evitar o ressecamento da pele e pêlos das Choriblobs. Elas precisam estar constantemente roendo algo, pois seus dentes nunca param de cresce",
+      "subText": "Apesar de serem um Lugh bem calmo e fácil de treinar, a mordida das Choriblobs pode destruir facilmente frutas e troncos de árvores. Existem boatos de bandos de Choriblobs que usam suas habilidades para atravessar terrenos perigosos onde a água é escassa ou inexistente, como desertos ou regiões vulcânicas."
+    },
+    "onthera": {
+      "buttonRegular": "Regular",
+      "buttonPrismatic": "Ver Versão Prismática",
+      "text": "Ontheras são ligadas ao elemento fogo e isso pode ser visto tanto na chama que arde na ponta da sua cauda, quanto em seu temperamento, que pode ser acolhedor e indomável. Depende de como você interage com ela. Apesar de serem do tipo fogo, elas são muitas vezes avistadas nas margens de lagos e rios.",
+      "subText": "Elas possuem uma pelagem vermelha cor de brasa no topo da cabeça e uma labareda de fogo na ponta de seu rabo. As pintas em seu corpo auxiliam à absorção do calor do sol, alimentando assim sua chama interna. Amam brincar de “emboscada” na grama alta, às vezes, Ontheras podem causar incêndios acidentais, se perderem o controle de sua chama (ou se empolgarem demais). Algumas clareiras queimadas são pontos de encontro das Ontheras."
     }
   },
   "gallery": {

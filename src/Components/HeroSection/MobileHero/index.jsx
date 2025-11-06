@@ -23,15 +23,21 @@ export const MobileHero = ({ onWishlist, downDestination }) => {
         />
       </div>
 
-      <button
-        type="button"
-        className={styles.wishlistButton}
-        onClick={onWishlist}
+      <a
+        href="https://store.steampowered.com/app/3234720/Lugh_World/"
+        target="_blank"
+        rel="noopener noreferrer"
       >
-        <img src={iconBtn} alt="" aria-hidden="true" />
-        {t("buttons.wishlist")}
-        <MdOutlineKeyboardArrowRight />
-      </button>
+        <button
+          type="button"
+          className={styles.wishlistButton}
+          onClick={onWishlist}
+        >
+          <img src={iconBtn} alt="" aria-hidden="true" />
+          {t("buttons.wishlist")}
+          <MdOutlineKeyboardArrowRight />
+        </button>
+      </a>
 
       {downDestination && (
         <button

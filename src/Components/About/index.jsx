@@ -20,9 +20,10 @@ export const About = () => {
       </div>
 
       <div className={styles.monitorWrap}>
-        <video
+        <iframe
           className={styles.screenVideo}
-          src="https://video.wixstatic.com/video/896967_cdaca688ffb14cb281dfd0514c2ec6cd/1080p/mp4/file.mp4"
+          src="https://www.youtube.com/embed/ScTYSp42T6g?autoplay=1&mute=1&loop=1&playlist=ScTYSp42T6g"
+          title="About video"
           autoPlay
           muted
           loop

@@ -7,10 +7,15 @@ export const WishBtn = () => {
   const { t } = useTranslation();
 
   return (
-    <button className={styles.wishBtn}>
+    <a
+      className={styles.wishBtn}
+      href="https://store.steampowered.com/app/3234720/Lugh_World/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <img src={iconBtn} alt="" />
       {t("buttons.wishlist")}
       <MdOutlineKeyboardArrowRight />
-    </button>
+    </a>
   );
 };

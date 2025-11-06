@@ -52,16 +52,18 @@ export const Badges = styled.div`
 `;
 
 export const Title = styled.h2`
-  overflow: hidden;
   color: var(--branco);
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-family: 'LughFont', sans-serif;
-  font-size: 120px;
-  font-style: normal;
+  font-family: "LughFont", sans-serif;
+  /* permitir que nomes longos quebrem em múltiplas linhas e sejam responsivos */
+  font-size: clamp(38px, 8vw, 106px);
+  font-style: normal;  
   font-weight: 400;
-  line-height: normal;
+  line-height: 0.90;
   text-align: left;
+  white-space: normal;
+  overflow: visible;
+  word-break: break-word;
+  letter-spacing: 0.7px;
 `;
 
 export const PrismaticBtn = styled.div`
@@ -73,7 +75,7 @@ export const PrismaticBtn = styled.div`
   align-items: center;
   gap: 20px;
   flex-shrink: 0;
-  font-family: 'Sora', sans-serif;
+  font-family: "Sora", sans-serif;
 
   border-radius: 14px;
   border: 2px solid transparent; /* espaço da borda */
@@ -150,7 +152,7 @@ export const Right = styled.div`
 
 export const Thumbs = styled.div`
   position: absolute;
-  right: 24px;
+  left: 60%;
   bottom: 0px;
   display: flex;
   gap: 16px;

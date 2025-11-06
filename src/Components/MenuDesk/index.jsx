@@ -56,11 +56,16 @@ export const MenuDesk = () => {
           </button>
         </div>
       </div>
-      <button className={styles.wishBtn} title={t("buttons.wishlist")}>
-        <img src={iconBtn} alt="" />
-        {t("buttons.wishlist")}
-        <MdOutlineKeyboardArrowRight />
-      </button>
+      <a
+      className={styles.wishBtn}
+      href="https://store.steampowered.com/app/3234720/Lugh_World/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img src={iconBtn} alt="" />
+      {t("buttons.wishlist")}
+      <MdOutlineKeyboardArrowRight />
+    </a>
       <div>
         <LanguageSwitcher />
       </div>

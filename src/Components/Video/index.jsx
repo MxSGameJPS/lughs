@@ -11,11 +11,12 @@ import "swiper/css/pagination";
 import { DownBtn } from "../DownBtn";
 
 const videos = [
-  { id: "SC4Zz7U5tgw", title: "Jogo LUGH WORLD encerra Pré-Alpha! 1" },
+  { id: "ScTYSp42T6g", title: "Jogo LUGH WORLD encerra Pré-Alpha! 1" },
   { id: "SC4Zz7U5tgw", title: "Jogo LUGH WORLD encerra Pré-Alpha! 2" },
   { id: "SC4Zz7U5tgw", title: "Jogo LUGH WORLD encerra Pré-Alpha! 3" },
   { id: "SC4Zz7U5tgw", title: "Jogo LUGH WORLD encerra Pré-Alpha! 4" },
   { id: "SC4Zz7U5tgw", title: "Jogo LUGH WORLD encerra Pré-Alpha! 5" },
+  { id: "SC4Zz7U5tgw", title: "Jogo LUGH WORLD encerra Pré-Alpha! 6" },
 ];
 
 export const Video = () => {

@@ -103,6 +103,9 @@ export const CardImgBox = styled.div`
   img{
     position: absolute;
     bottom: -9px;
+    height: 250px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
 `
